@@ -1,0 +1,16 @@
+earthengine-api
+geemap
+rasterio
+geopandas
+streamlit
+folium
+streamlit-folium
+plotly
+scipy
+matplotlib
+rasterstats
+pandas
+numpy
+jupyter
+osmnx
+requests
