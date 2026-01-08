@@ -76,5 +76,6 @@ Debes ejecutar los scripts en el siguiente orden:
     -   Clasificación multispectral para urbanización (NDVI + NDBI).
 -   **Validación**: Visual a través del dashboard comparando imágenes RGB/NDVI.
 
-## Autor
+## Autores
+Catalina López
 Felipe Baeza
