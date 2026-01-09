@@ -1,0 +1,33 @@
+# ==============================================================================
+# Datos satelitales (demasiado pesados para GitHub - ~12 GB)
+# ==============================================================================
+# Usar script: python scripts/download_sentinel_series.py para descargar
+data/raw/sentinel_series/*.zip
+data/raw/sentinel_series/*.SAFE/
+*.partial
+
+# Mantener metadatos (son pequeños y útiles)
+!data/raw/sentinel_series/metadata_imagenes.json
+!data/raw/sentinel_series/productos_disponibles.json
+
+# ==============================================================================
+# Cache y archivos temporales
+# ==============================================================================
+cache/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+
+# ==============================================================================
+# IDE y sistema
+# ==============================================================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+Thumbs.db
+.DS_Store

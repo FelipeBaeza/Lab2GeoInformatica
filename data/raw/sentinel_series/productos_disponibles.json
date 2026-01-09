@@ -1,0 +1,107 @@
+[
+  {
+    "year": 2020,
+    "name": "S2B_MSIL2A_20200116T142649_N0500_R053_T18GXT_20230605T220527.SAFE",
+    "date": "2020-01-16",
+    "cloud_cover": "N/A",
+    "id": "73b837fd-e413-4f8e-80c5-c2d8030a0971"
+  },
+  {
+    "year": 2020,
+    "name": "S2A_MSIL2A_20200121T142651_N0500_R053_T18GXT_20230609T123124.SAFE",
+    "date": "2020-01-21",
+    "cloud_cover": "N/A",
+    "id": "e83ad730-a3a7-4b3a-8f48-dbfe4f9ff0cd"
+  },
+  {
+    "year": 2020,
+    "name": "S2B_MSIL2A_20200208T143659_N0500_R096_T18GXT_20230624T222012.SAFE",
+    "date": "2020-02-08",
+    "cloud_cover": "N/A",
+    "id": "e7a002db-2783-4b46-83ec-b2349107e086"
+  },
+  {
+    "year": 2021,
+    "name": "S2A_MSIL2A_20210105T142731_N0500_R053_T18GXT_20230323T140558.SAFE",
+    "date": "2021-01-05",
+    "cloud_cover": "N/A",
+    "id": "bd2c2739-dd69-47d3-8007-6fa403892a23"
+  },
+  {
+    "year": 2021,
+    "name": "S2B_MSIL2A_20210130T142729_N0500_R053_T18GXT_20230611T024510.SAFE",
+    "date": "2021-01-30",
+    "cloud_cover": "N/A",
+    "id": "c958e8a0-1ef8-45ac-9655-8d5c30eacc7a"
+  },
+  {
+    "year": 2021,
+    "name": "S2A_MSIL2A_20210204T142731_N0500_R053_T18GXT_20230610T122111.SAFE",
+    "date": "2021-02-04",
+    "cloud_cover": "N/A",
+    "id": "db113b87-50ae-40b1-808a-d4ada986df45"
+  },
+  {
+    "year": 2022,
+    "name": "S2B_MSIL2A_20220118T143719_N0510_R096_T18GXT_20240502T074128.SAFE",
+    "date": "2022-01-18",
+    "cloud_cover": "N/A",
+    "id": "b935eb9d-a363-4a40-92eb-523cb10136ba"
+  },
+  {
+    "year": 2022,
+    "name": "S2B_MSIL2A_20220125T142729_N0510_R053_T18GXT_20240506T020302.SAFE",
+    "date": "2022-01-25",
+    "cloud_cover": "N/A",
+    "id": "deb6ac8e-4167-4875-acd8-469bd26f8340"
+  },
+  {
+    "year": 2022,
+    "name": "S2B_MSIL2A_20220128T143719_N0510_R096_T18GXT_20240507T184744.SAFE",
+    "date": "2022-01-28",
+    "cloud_cover": "N/A",
+    "id": "f5cea322-8fcb-4722-9761-9cd4aecc1288"
+  },
+  {
+    "year": 2023,
+    "name": "S2A_MSIL2A_20230105T142711_N0510_R053_T18GXT_20240808T035959.SAFE",
+    "date": "2023-01-05",
+    "cloud_cover": "N/A",
+    "id": "b8f3f89d-0e9b-465b-b2bc-f70af3810f5d"
+  },
+  {
+    "year": 2023,
+    "name": "S2A_MSIL2A_20230115T142711_N0510_R053_T18GXT_20240808T204758.SAFE",
+    "date": "2023-01-15",
+    "cloud_cover": "N/A",
+    "id": "ade843fc-5300-4447-abf5-67784e5256e1"
+  },
+  {
+    "year": 2023,
+    "name": "S2A_MSIL2A_20230204T142711_N0510_R053_T18GXT_20240816T082552.SAFE",
+    "date": "2023-02-04",
+    "cloud_cover": "N/A",
+    "id": "9f4a85fa-9a1d-4c79-8110-c704bf7840ac"
+  },
+  {
+    "year": 2024,
+    "name": "S2A_MSIL2A_20240110T142711_N0510_R053_T18GXT_20240110T195056.SAFE",
+    "date": "2024-01-10",
+    "cloud_cover": "N/A",
+    "id": "2fc182bf-76e3-4149-ab1d-5dd65b25ec1b"
+  },
+  {
+    "year": 2024,
+    "name": "S2A_MSIL2A_20240120T142701_N0510_R053_T18GXT_20240120T200049.SAFE",
+    "date": "2024-01-20",
+    "cloud_cover": "N/A",
+    "id": "53e650e1-79b1-47c0-99c9-f26b84edc366"
+  },
+  {
+    "year": 2024,
+    "name": "S2A_MSIL2A_20240123T143741_N0510_R096_T18GXT_20240123T201348.SAFE",
+    "date": "2024-01-23",
+    "cloud_cover": "N/A",
+    "id": "ddc05a20-af21-418d-a843-618d3deeacab"
+  }
+]

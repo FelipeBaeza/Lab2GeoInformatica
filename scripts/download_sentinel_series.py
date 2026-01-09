@@ -280,6 +280,48 @@ def create_session_with_retries():
     return session
 
 
+def verify_zip_integrity(filepath, expected_size=None):
+    """
+    Verifica que un archivo ZIP sea válido y esté completo.
+    
+    Args:
+        filepath: Ruta al archivo ZIP
+        expected_size: Tamaño esperado en bytes (opcional)
+        
+    Returns:
+        tuple: (es_valido: bool, mensaje: str)
+    """
+    try:
+        # Verificar que el archivo existe y tiene contenido
+        if not filepath.exists():
+            return False, "Archivo no existe"
+        
+        actual_size = filepath.stat().st_size
+        if actual_size == 0:
+            return False, "Archivo vacío"
+        
+        # Verificar tamaño si se proporciona
+        if expected_size and actual_size < expected_size * 0.95:  # 5% tolerancia
+            return False, f"Tamaño incompleto: {actual_size} vs {expected_size} esperado"
+        
+        # Verificar que es un ZIP válido
+        if not zipfile.is_zipfile(filepath):
+            return False, "No es un archivo ZIP válido"
+        
+        # Verificar integridad del contenido
+        with zipfile.ZipFile(filepath, 'r') as z:
+            bad_file = z.testzip()
+            if bad_file:
+                return False, f"Archivo corrupto dentro del ZIP: {bad_file}"
+        
+        return True, "ZIP válido y completo"
+        
+    except zipfile.BadZipFile:
+        return False, "Archivo ZIP dañado (BadZipFile)"
+    except Exception as e:
+        return False, f"Error verificando ZIP: {e}"
+
+
 def download_product(product_id, product_name, access_token, output_dir, max_retries=5):
     """
     Descarga un producto Sentinel-2 con reintentos y manejo robusto de errores.
@@ -355,15 +397,27 @@ def download_product(product_id, product_name, access_token, output_dir, max_ret
                             progress = (downloaded / total_size) * 100
                             print(f"\rProgreso: {progress:.1f}% ({downloaded/(1024*1024):.1f} MB)", end='', flush=True)
             
-            # Renombrar archivo temporal al final
-            temp_path.rename(output_path)
-            print(f"\nGuardado: {output_path.name}")
+            # Verificar integridad del ZIP antes de renombrar
+            print(f"\n  Verificando integridad del archivo...")
+            is_valid, message = verify_zip_integrity(temp_path, total_size)
             
-            # Pausa después de descarga exitosa para no saturar el servidor
-            print("  Esperando 3 segundos antes de la siguiente descarga...")
-            time.sleep(3)
-            
-            return output_path
+            if is_valid:
+                # Renombrar archivo temporal al final
+                temp_path.rename(output_path)
+                print(f"  {message}")
+                print(f"Guardado: {output_path.name}")
+                
+                # Pausa después de descarga exitosa para no saturar el servidor
+                print("  Esperando 3 segundos antes de la siguiente descarga...")
+                time.sleep(3)
+                
+                return output_path
+            else:
+                print(f"  ERROR: {message}")
+                print(f"  Eliminando archivo corrupto y reintentando...")
+                temp_path.unlink()
+                # Continuar al siguiente intento
+                continue
             
         except (requests.exceptions.ConnectionError, 
                 requests.exceptions.ChunkedEncodingError,
