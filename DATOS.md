@@ -1,47 +1,40 @@
-# Datos Satelitales Sentinel-2
+# Gestión de Datos Satelitales (Almacenamiento Externo)
 
-Los archivos de imágenes Sentinel-2 (~12 GB) **no están incluidos en este repositorio** debido a su tamaño.
+Debido al tamaño de las imágenes satelitales (~12 GB en total), los archivos **ZIP** no se almacenan en este repositorio. En su lugar, utilizamos un servicio de almacenamiento externo (Google Drive) para alojar los datos crudos.
 
-## Cómo obtener los datos
+Este repositorio contiene:
+1. Scripts de descarga y procesamiento (`scripts/`)
+2. Metadatos de las imágenes (`data/raw/sentinel_series/*.json`)
+3. Archivos vectoriales de la zona de estudio (`data/vector/`)
 
-### Opción 1: Descargar automáticamente (recomendado)
+## Acceso a los Datos
 
-1. **Regístrate gratis** en [Copernicus Data Space](https://dataspace.copernicus.eu/)
+**[https://drive.google.com/drive/u/1/folders/1HvHf0ji-kvhaiA1DFp3KNw1lto0NZduM]**
 
-2. **Configura credenciales** en PowerShell:
+> **Nota para el usuario:** Debes subir los archivos de tu carpeta local `data/raw/sentinel_series/` a tu nube personal y pegar el enlace arriba para que otros puedan acceder.
+
+### Estructura de carpetas requerida
+Si descargas los datos desde el enlace externo, asegúrate de colocarlos en la siguiente estructura local para que los scripts funcionen:
+
+```
+PROYECTO/
+├── data/
+│   └── raw/
+│       └── sentinel_series/
+│           ├── S2A_MSIL2A_2020...SAFE.zip
+│           ├── S2B_MSIL2A_2021...SAFE.zip
+│           └── ... (resto de archivos ZIP)
+```
+
+## Reproducir la descarga (Alternativa)
+Si no tienes acceso al Drive, puedes volver a descargar los datos originales usando el script incluido:
+
+1. **Registrarse** en [Copernicus Data Space](https://dataspace.copernicus.eu/) (Gratis)
+2. **Ejecutar**:
    ```powershell
-   $env:COPERNICUS_USER = "tu_email@ejemplo.com"
-   $env:COPERNICUS_PASSWORD = "tu_contraseña"
-   ```
-
-3. **Ejecuta el script**:
-   ```powershell
+   # Configurar credenciales primero
+   $env:COPERNICUS_USER = "tu_email"
+   $env:COPERNICUS_PASSWORD = "tu_pw"
+   
    python scripts/download_sentinel_series.py
    ```
-
-Los archivos se guardarán en `data/raw/sentinel_series/`.
-
-### Opción 2: Descargar manualmente
-
-Visita [Copernicus Browser](https://browser.dataspace.copernicus.eu/) y busca imágenes Sentinel-2 L2A para:
-- **Ubicación**: Chaitén, Chile (-72.76, -42.96, -72.64, -42.86)
-- **Fechas**: Enero-Febrero de 2020-2024
-- **Nubosidad**: < 15%
-
-## Archivos incluidos
-
-Aunque los ZIPs no están versionados, sí se incluyen:
-- `data/raw/sentinel_series/metadata_imagenes.json` - Metadatos de las imágenes
-- `data/raw/sentinel_series/productos_disponibles.json` - Lista de productos disponibles
-
-## Estructura esperada
-
-Después de ejecutar el script, tendrás ~15 archivos ZIP (~800 MB cada uno):
-```
-data/raw/sentinel_series/
-├── S2A_MSIL2A_20200121...SAFE.zip
-├── S2B_MSIL2A_20200116...SAFE.zip
-├── ...
-├── metadata_imagenes.json
-└── productos_disponibles.json
-```

@@ -7,7 +7,8 @@ Este proyecto implementa un flujo de trabajo para detectar, cuantificar y visual
 ```
 /
 ├── data/
-│   ├── raw/            # Imágenes Sentinel-2 descargadas (TIF)
+│   ├── raw/            # Imágenes Sentinel-2 (Ver DATOS.md)
+│   │   └── sentinel_series/ # Series temporales descargadas
 │   ├── processed/      # Índices espectrales y cambios clasificados
 │   └── vector/         # Shapefiles/GeoJSON de zonas (manzanas, etc.)
 ├── scripts/
@@ -38,11 +39,12 @@ Este proyecto implementa un flujo de trabajo para detectar, cuantificar y visual
 Debes ejecutar los scripts en el siguiente orden:
 
 1.  **Adquisición de Datos**:
-    Descarga las imágenes de Sentinel-2 para los veranos de 2018, 2020, 2022 y 2024.
+    > **IMPORTANTE**: Los archivos de imágenes (~12 GB) no se incluyen en el repositorio. Ver instrucciones en [DATOS.md](DATOS.md).
+    
+    Para descargar nuevas imágenes (requiere cuenta Copernicus):
     ```bash
-    python scripts/download_sentinel.py
+    python scripts/download_sentinel_series.py
     ```
-    *Nota: Requiere autenticación de Google Earth Engine. Sigue las instrucciones en consola si se solicita.*
 
 2.  **Procesamiento de Índices**:
     Calcula NDVI, NDBI, NDWI y BSI para cada imagen descargada.
