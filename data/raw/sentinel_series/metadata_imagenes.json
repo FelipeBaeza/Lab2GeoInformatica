@@ -15,34 +15,18 @@
   "parametros_descarga": {
     "periodo": "2020-2024",
     "meses": "Enero-Febrero (verano austral)",
-    "max_nubosidad": "15%",
+    "max_nubosidad": "10%",
     "max_imagenes_por_año": 3,
     "fuente": "Copernicus Data Space Ecosystem"
   },
   "justificacion_fechas": "Se seleccionó el período de verano austral (enero-febrero) porque: 1) Menor probabilidad de cobertura nubosa en la zona de Chaitén, 2) Mayor cantidad de horas de luz solar disponibles, 3) Mejor ángulo de elevación solar para imágenes ópticas, 4) Condiciones atmosféricas más estables en la Patagonia norte.",
-  "fecha_generacion": "2026-01-09T14:30:39.690084",
+  "fecha_generacion": "2026-01-10T20:14:19.846045",
   "imagenes": [
-    {
-      "id": "73b837fd-e413-4f8e-80c5-c2d8030a0971",
-      "nombre_producto": "S2B_MSIL2A_20200116T142649_N0500_R053_T18GXT_20230605T220527.SAFE",
-      "año": 2020,
-      "numero_imagen": 1,
-      "fecha_adquisicion": "2020-01-16T14:26:49",
-      "nubosidad_porcentaje": "N/A",
-      "sensor": "Sentinel-2 MSI",
-      "producto": "S2MSI2A (Level-2A Surface Reflectance)",
-      "plataforma": "Sentinel-2",
-      "tile_mgrs": "N/A",
-      "orbita": "N/A",
-      "sistema_referencia": "EPSG:4326 (WGS84)",
-      "resolucion_m": 10,
-      "tamaño_mb": 816.85
-    },
     {
       "id": "e83ad730-a3a7-4b3a-8f48-dbfe4f9ff0cd",
       "nombre_producto": "S2A_MSIL2A_20200121T142651_N0500_R053_T18GXT_20230609T123124.SAFE",
       "año": 2020,
-      "numero_imagen": 2,
+      "numero_imagen": 1,
       "fecha_adquisicion": "2020-01-21T14:26:51",
       "nubosidad_porcentaje": "N/A",
       "sensor": "Sentinel-2 MSI",
@@ -58,7 +42,7 @@
       "id": "e7a002db-2783-4b46-83ec-b2349107e086",
       "nombre_producto": "S2B_MSIL2A_20200208T143659_N0500_R096_T18GXT_20230624T222012.SAFE",
       "año": 2020,
-      "numero_imagen": 3,
+      "numero_imagen": 2,
       "fecha_adquisicion": "2020-02-08T14:36:59",
       "nubosidad_porcentaje": "N/A",
       "sensor": "Sentinel-2 MSI",
@@ -69,6 +53,22 @@
       "sistema_referencia": "EPSG:4326 (WGS84)",
       "resolucion_m": 10,
       "tamaño_mb": 937.01
+    },
+    {
+      "id": "46d1185f-145b-496d-b7e4-563a2dd7e4c8",
+      "nombre_producto": "S2A_MSIL2A_20200220T142651_N0500_R053_T18GXT_20230613T021157.SAFE",
+      "año": 2020,
+      "numero_imagen": 3,
+      "fecha_adquisicion": "2020-02-20T14:26:51",
+      "nubosidad_porcentaje": "N/A",
+      "sensor": "Sentinel-2 MSI",
+      "producto": "S2MSI2A (Level-2A Surface Reflectance)",
+      "plataforma": "Sentinel-2",
+      "tile_mgrs": "N/A",
+      "orbita": "N/A",
+      "sistema_referencia": "EPSG:4326 (WGS84)",
+      "resolucion_m": 10,
+      "tamaño_mb": 812.35
     },
     {
       "id": "bd2c2739-dd69-47d3-8007-6fa403892a23",
@@ -167,26 +167,10 @@
       "tamaño_mb": 927.69
     },
     {
-      "id": "b8f3f89d-0e9b-465b-b2bc-f70af3810f5d",
-      "nombre_producto": "S2A_MSIL2A_20230105T142711_N0510_R053_T18GXT_20240808T035959.SAFE",
-      "año": 2023,
-      "numero_imagen": 1,
-      "fecha_adquisicion": "2023-01-05T14:27:11",
-      "nubosidad_porcentaje": "N/A",
-      "sensor": "Sentinel-2 MSI",
-      "producto": "S2MSI2A (Level-2A Surface Reflectance)",
-      "plataforma": "Sentinel-2",
-      "tile_mgrs": "N/A",
-      "orbita": "N/A",
-      "sistema_referencia": "EPSG:4326 (WGS84)",
-      "resolucion_m": 10,
-      "tamaño_mb": 862.68
-    },
-    {
       "id": "ade843fc-5300-4447-abf5-67784e5256e1",
       "nombre_producto": "S2A_MSIL2A_20230115T142711_N0510_R053_T18GXT_20240808T204758.SAFE",
       "año": 2023,
-      "numero_imagen": 2,
+      "numero_imagen": 1,
       "fecha_adquisicion": "2023-01-15T14:27:11",
       "nubosidad_porcentaje": "N/A",
       "sensor": "Sentinel-2 MSI",
@@ -199,11 +183,11 @@
       "tamaño_mb": 791.26
     },
     {
-      "id": "9f4a85fa-9a1d-4c79-8110-c704bf7840ac",
-      "nombre_producto": "S2A_MSIL2A_20230204T142711_N0510_R053_T18GXT_20240816T082552.SAFE",
+      "id": "fa06ffd8-d91e-4f4e-9ed2-95a14f9cbee5",
+      "nombre_producto": "S2A_MSIL2A_20230217T143721_N0510_R096_T18GXT_20240820T064124.SAFE",
       "año": 2023,
-      "numero_imagen": 3,
-      "fecha_adquisicion": "2023-02-04T14:27:11",
+      "numero_imagen": 2,
+      "fecha_adquisicion": "2023-02-17T14:37:21",
       "nubosidad_porcentaje": "N/A",
       "sensor": "Sentinel-2 MSI",
       "producto": "S2MSI2A (Level-2A Surface Reflectance)",
@@ -212,7 +196,7 @@
       "orbita": "N/A",
       "sistema_referencia": "EPSG:4326 (WGS84)",
       "resolucion_m": 10,
-      "tamaño_mb": 806.99
+      "tamaño_mb": 911.24
     },
     {
       "id": "2fc182bf-76e3-4149-ab1d-5dd65b25ec1b",

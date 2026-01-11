@@ -1,92 +1,158 @@
+import os
+import zipfile
 import rasterio
 import numpy as np
+import warnings
 from pathlib import Path
-import os
+from rasterio.enums import Resampling
 
-def calcular_indices(ruta_imagen, ruta_salida):
+# Suprimir advertencias
+warnings.filterwarnings('ignore')
+
+# Configuración
+INPUT_DIR = Path('data/raw/sentinel_series')
+OUTPUT_DIR = Path('data/processed')
+OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+
+def buscar_banda_en_zip(zip_path, sufijo_banda):
     """
-    Calcula indices espectrales para una imagen Sentinel-2.
-    Bandas esperadas (del script de descarga):
-    0: B2 (Blue)
-    1: B3 (Green)
-    2: B4 (Red)
-    3: B8 (NIR)
-    4: B11 (SWIR1)
-    5: B12 (SWIR2)
+    Encuentra la ruta completa de una banda dentro del archivo zip.
+    ejemplos de sufijo_banda: '_B02_10m.jp2', '_B02.jp2' (dependiendo de la estructura L2A)
     """
-    print(f"Procesando {ruta_imagen}...")
-    with rasterio.open(ruta_imagen) as src:
-        # Leer bandas
-        # Escalar a reflectancia (geemap exporta como valores originales, usualmente 0-10000 o float 0-1 si calibrado)
-        # Vamos a asumir que vienen en 0-10000 si son enteros, o 0-1 si son float.
-        # Check dtype
-        dtype = src.profile['dtype']
-        scale = 10000.0 if 'int' in dtype else 1.0
+    try:
+        with zipfile.ZipFile(zip_path, 'r') as z:
+            for filename in z.namelist():
+                # Buscar fecha de imagen en carpeta GRANULE típicamente
+                # Patrón a menudo: .../IMG_DATA/R10m/..._B02_10m.jp2 o similar
+                if filename.endswith('.jp2') and 'IMG_DATA' in filename:
+                    if sufijo_banda in filename:
+                         return f"/vsizip/{zip_path}/{filename}"
+    except Exception as e:
+        print(f"Error leyendo zip {zip_path}: {e}")
+    return None
 
-        blue = src.read(1).astype(float) / scale
-        green = src.read(2).astype(float) / scale
-        red = src.read(3).astype(float) / scale
-        nir = src.read(4).astype(float) / scale
-        swir1 = src.read(5).astype(float) / scale
-        swir2 = src.read(6).astype(float) / scale
+def leer_banda(ruta, forma_objetivo=None):
+    """Lee una banda y la remuestrea si es necesario para coincidir con la forma objetivo."""
+    with rasterio.open(ruta) as src:
+        if forma_objetivo is None:
+            datos = src.read(1)
+            perfil = src.profile
+            return datos.astype('float32'), perfil
+        else:
+            datos = src.read(
+                1,
+                out_shape=forma_objetivo,
+                resampling=Resampling.bilinear
+            )
+            return datos.astype('float32')
 
-        profile = src.profile
+def calcular_indices(zip_path):
+    print(f"Procesando {zip_path.name}...")
+    
+    # Identificar bandas
+    # La nomenclatura L2A puede variar. Usualmente termina con _BXX_10m.jp2 o _BXX_20m.jp2
+    # Necesitamos:
+    # Azul: B02 (10m)
+    # Verde: B03 (10m)
+    # Rojo: B04 (10m)
+    # NIR: B08 (10m)
+    # SWIR1: B11 (20m)
+    # SWIR2: B12 (20m) - opcional, se usa B11 usualmente para NDBI en este contexto
+    
+    # Intentar sufijos de 10m primero
+    ruta_b02 = buscar_banda_en_zip(zip_path, '_B02_10m.jp2') or buscar_banda_en_zip(zip_path, '_B02.jp2')
+    ruta_b03 = buscar_banda_en_zip(zip_path, '_B03_10m.jp2') or buscar_banda_en_zip(zip_path, '_B03.jp2')
+    ruta_b04 = buscar_banda_en_zip(zip_path, '_B04_10m.jp2') or buscar_banda_en_zip(zip_path, '_B04.jp2')
+    ruta_b08 = buscar_banda_en_zip(zip_path, '_B08_10m.jp2') or buscar_banda_en_zip(zip_path, '_B08.jp2')
+    
+    # Bandas de 20m
+    ruta_b11 = buscar_banda_en_zip(zip_path, '_B11_20m.jp2') or buscar_banda_en_zip(zip_path, '_B11.jp2')
+    
+    if not all([ruta_b02, ruta_b03, ruta_b04, ruta_b08, ruta_b11]):
+        print(f"  ERROR: Faltan bandas en {zip_path.name}")
+        return
 
-    # Evitar division por cero
+    # Leer bandas de 10m primero para establecer forma de referencia
+    azul, perfil = leer_banda(ruta_b02)
+    verde, _ = leer_banda(ruta_b03)
+    rojo, _ = leer_banda(ruta_b04)
+    nir, _ = leer_banda(ruta_b08)
+    
+    forma_objetivo = azul.shape
+    
+    # Leer y remuestrear banda de 20m
+    swir1 = leer_banda(ruta_b11, forma_objetivo=forma_objetivo)
+    
+    # Escalar a reflectancia (0-1)
+    # Los valores Sentinel-2 son típicamente 0-10000.
+    azul /= 10000.0
+    verde /= 10000.0
+    rojo /= 10000.0
+    nir /= 10000.0
+    swir1 /= 10000.0
+    
     eps = 1e-10
 
-    # NDVI: Vegetacion (NIR - Red) / (NIR + Red)
-    ndvi = (nir - red) / (nir + red + eps)
-
-    # NDBI: Areas construidas (SWIR1 - NIR) / (SWIR1 + NIR)
-    # Algunos usan SWIR1 (B11), otros SWIR2. El lab dice SWIR - NIR. Usualmente B11.
+    # 1. NDVI (Vegetación)
+    ndvi = (nir - rojo) / (nir + rojo + eps)
+    
+    # 2. NDBI (Zonas Construidas)
+    # Formula variation: (SWIR - NIR) / (SWIR + NIR)
     ndbi = (swir1 - nir) / (swir1 + nir + eps)
+    
+    # 3. NDWI (Agua)
+    # (Green - NIR) / (Green + NIR)
+    ndwi = (verde - nir) / (verde + nir + eps)
+    
+    # 4. BSI (Suelo Desnudo)
+    # ((SWIR + Red) - (NIR + Blue)) / ((SWIR + Red) + (NIR + Blue))
+    numerador = (swir1 + rojo) - (nir + azul)
+    denominador = (swir1 + rojo) + (nir + azul) + eps
+    bsi = numerador / denominador
 
-    # NDWI: Agua (Green - NIR) / (Green + NIR) (McFeeters)
-    # O (Green - SWIR) (Gao). El lab dice (Green - NIR) / (Green + NIR)
-    ndwi = (green - nir) / (green + nir + eps)
+    # Preparar perfil de salida
+    perfil.update(
+        driver='GTiff',
+        count=4,
+        dtype='float32'
+    )
+    
+    # Extraer año/fecha para el nombre del archivo
+    # Formato nombre: S2A_MSIL2A_YYYYMMDD...
+    try:
+        str_fecha = zip_path.name.split('_')[2][:8] # YYYYMMDD
+        anio = str_fecha[:4]
+    except:
+        str_fecha = "desconocida"
+        anio = "desconocido"
 
-    # BSI: Suelo desnudo 
-    # ((SWIR1 + Red) - (NIR + Blue)) / ((SWIR1 + Red) + (NIR + Blue))
-    # Usando SWIR1 (B11)
-    numerator = (swir1 + red) - (nir + blue)
-    denominator = (swir1 + red) + (nir + blue) + eps
-    bsi = numerator / denominator
-
-    # Guardar indices
-    profile.update(count=4, dtype='float32', nodata=-9999)
-    # Also update transform if needed, but it should be same
-
-    # Mask nans
-    ndvi = np.nan_to_num(ndvi, nan=-9999)
-    ndbi = np.nan_to_num(ndbi, nan=-9999)
-    ndwi = np.nan_to_num(ndwi, nan=-9999)
-    bsi = np.nan_to_num(bsi, nan=-9999)
-
-    with rasterio.open(ruta_salida, 'w', **profile) as dst:
-        dst.write(ndvi.astype('float32'), 1)
-        dst.write(ndbi.astype('float32'), 2)
-        dst.write(ndwi.astype('float32'), 3)
-        dst.write(bsi.astype('float32'), 4)
+    nombre_salida = f"indices_{anio}_{str_fecha}.tif"
+    ruta_salida = OUTPUT_DIR / nombre_salida
+    
+    print(f"  Guardando {nombre_salida}...")
+    
+    with rasterio.open(ruta_salida, 'w', **perfil) as dst:
+        dst.write(ndvi, 1)
+        dst.write(ndbi, 2)
+        dst.write(ndwi, 3)
+        dst.write(bsi, 4)
         dst.descriptions = ('NDVI', 'NDBI', 'NDWI', 'BSI')
 
-    print(f"Indices guardados en {ruta_salida}")
-    return {'ndvi': ndvi, 'ndbi': ndbi, 'ndwi': ndwi, 'bsi': bsi}
+    print(f"  Listo. NDVI medio: {np.nanmean(ndvi):.3f}")
+
+def main():
+    print("Iniciando Cálculo de Índices...")
+    archivos_zip = sorted(INPUT_DIR.glob('*.zip'))
+    
+    if not archivos_zip:
+        print("No se encontraron archivos zip en data/raw/sentinel_series")
+        return
+
+    for archivo_zip in archivos_zip:
+        try:
+            calcular_indices(archivo_zip)
+        except Exception as e:
+            print(f"Falló el procesamiento de {archivo_zip.name}: {e}")
 
 if __name__ == "__main__":
-    input_dir = Path('data/raw')
-    output_dir = Path('data/processed')
-    output_dir.mkdir(parents=True, exist_ok=True)
-
-    imagenes = sorted(input_dir.glob('sentinel2_*.tif'))
-    
-    if not imagenes:
-        print("No se encontraron imagenes en data/raw. Ejecuta primero download_sentinel.py")
-    
-    for img in imagenes:
-        year = img.stem.split('_')[1]
-        salida = output_dir / f'indices_{year}.tif'
-        try:
-            calcular_indices(img, salida)
-        except Exception as e:
-            print(f"Error procesando {img.name}: {e}")
+    main()

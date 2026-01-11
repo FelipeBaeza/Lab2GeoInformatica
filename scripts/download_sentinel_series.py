@@ -26,7 +26,7 @@ Justificación de fechas seleccionadas:
     - Razón: Menor probabilidad de nubosidad y mejor iluminación solar
     - La zona de Chaitén tiene alta pluviosidad, por lo que el verano
       ofrece las mejores condiciones atmosféricas para imágenes ópticas
-    - Se priorizan imágenes con <15% de nubosidad
+    - Se priorizan imágenes con <10% de nubosidad
 
 Requisitos:
     - Cuenta GRATUITA en Copernicus Data Space
@@ -75,7 +75,7 @@ START_MONTH_DAY = '01-01'  # 1 de enero
 END_MONTH_DAY = '02-28'    # 28 de febrero
 
 # Umbral máximo de nubosidad (%)
-MAX_CLOUD_COVER = 15
+MAX_CLOUD_COVER = 10
 
 # Máximo de imágenes por año
 MAX_IMAGES_PER_YEAR = 3
@@ -171,7 +171,7 @@ def get_access_token(username, password):
         return None
 
 
-def search_products(bbox, start_date, end_date, cloud_cover=15):
+def search_products(bbox, start_date, end_date, cloud_cover=10):
     """
     Busca productos Sentinel-2 L2A en el catálogo de Copernicus.
     
@@ -519,9 +519,9 @@ def search_available_images():
         
         if not products:
             # Intentar con umbral más alto
-            products = search_products(CHAITEN_BBOX, start_date, end_date, 30)
+            products = search_products(CHAITEN_BBOX, start_date, end_date, 15)
             if products:
-                print(f"   (usando nubosidad <30% por falta de imágenes más limpias)")
+                print(f"   (usando nubosidad <15% por falta de imágenes más limpias)")
         
         if products:
             print(f"   Encontradas: {len(products)} imágenes")
@@ -621,8 +621,8 @@ def main():
         
         if not products:
             # Intentar con umbral más alto
-            print(f"   Buscando con nubosidad <30%...")
-            products = search_products(CHAITEN_BBOX, start_date, end_date, 30)
+            print(f"   Buscando con nubosidad <15%...")
+            products = search_products(CHAITEN_BBOX, start_date, end_date, 15)
         
         if not products:
             print(f"No se encontraron imágenes para {year}")
