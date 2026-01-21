@@ -8,16 +8,22 @@ Este proyecto implementa un flujo de trabajo para detectar, cuantificar y visual
 /
 ├── data/
 │   ├── raw/            # Imágenes Sentinel-2 (Ver DATOS.md)
-│   │   └── sentinel_series/ # Series temporales descargadas
 │   ├── processed/      # Índices espectrales y cambios clasificados
-│   └── vector/         # Shapefiles/GeoJSON de zonas (manzanas, etc.)
+│   │   ├── cambio_clasificado.tif      # Método 2: Clasificación Multiíndice
+│   │   ├── cambio_diferencia_ndvi.tif  # Método 1: Diferencia de Índices
+│   │   ├── comparacion_metodos.md      # Documentación de métodos
+│   │   └── estadisticas_cambio.csv     # Estadísticas por zona
+│   └── vector/         # GeoJSON de zonas de análisis
 ├── scripts/
-│   ├── download_sentinel.py  # Descarga de GEE
-│   ├── calculate_indices.py  # Cálculo de NDVI, NDBI, etc.
-│   ├── detect_changes.py     # Detección de cambios (Diferencia y Clasificación)
-│   └── zonal_analysis.py     # Estadísticas por zona
+│   ├── download_sentinel_series.py # Descarga de Copernicus
+│   ├── calculate_indices.py        # Cálculo de NDVI, NDBI, NDWI, BSI
+│   ├── detect_changes.py           # Detección de cambios (2 métodos)
+│   └── zonal_analysis.py           # Estadísticas por zona
 ├── app/
-│   └── app.py                # Dashboard Streamlit
+│   └── app.py                      # Dashboard Streamlit interactivo
+├── outputs/
+│   ├── figures/                    # Gráficos generados
+│   └── interpretacion_resultados.md # Análisis e interpretación
 ├── requirements.txt
 └── README.md
 ```
@@ -67,16 +73,19 @@ Debes ejecutar los scripts en el siguiente orden:
 5.  **Visualización (Dashboard)**:
     Inicia la aplicación web para explorar los resultados.
     ```bash
-    streamlit run app/app.py
+    python -m streamlit run app/app.py
     ```
+    El dashboard se abrirá en http://localhost:8501
 
 ## Metodología
 
--   **Área de Estudio**: Chaitén urbano (bbox aproximado).
--   **Métodos**:
-    -   Diferencia de NDVI para cambios de vegetación.
-    -   Clasificación multispectral para urbanización (NDVI + NDBI).
--   **Validación**: Visual a través del dashboard comparando imágenes RGB/NDVI.
+-   **Área de Estudio**: Chaitén urbano (bbox: -72.76, -42.96, -72.64, -42.86).
+-   **Período**: 2020-2024 (14 imágenes Sentinel-2, verano austral).
+-   **Métodos de Detección de Cambios** (ver [comparacion_metodos.md](data/processed/comparacion_metodos.md)):
+    1.  **Diferencia de Índices (NDVI)**: Resta simple entre fechas, clasifica pérdida/ganancia de vegetación.
+    2.  **Clasificación Multiíndice**: Combina NDVI, NDBI y NDWI para distinguir urbanización, cambios de vegetación y agua.
+-   **Umbrales**: NDVI vegetación=0.3, NDBI urbano=0.0, cambio mínimo=0.15.
+-   **Validación**: Visual a través del dashboard comparando mapas de cambio.
 
 ## Autores
 Catalina López
