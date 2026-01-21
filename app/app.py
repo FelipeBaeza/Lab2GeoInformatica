@@ -168,8 +168,8 @@ def mostrar_metricas_globales(stats):
     )
 
 
-def mostrar_mapa_y_tabla(zonas, stats):
-    """Muestra el mapa coroplético y la tabla de zonas."""
+def mostrar_mapa_y_tabla(zonas, stats, tipo_cambio_seleccionado):
+    """Muestra el mapa coroplético y la tabla de zonas según el tipo de cambio seleccionado."""
     st.header("Mapa de Cambios por Zona")
     
     # Preparar datos
@@ -178,40 +178,62 @@ def mostrar_mapa_y_tabla(zonas, stats):
     zonas[col_zi] = zonas[col_zi].astype(str)
     zonas_stats = zonas.merge(stats, left_on=col_zi, right_on='zona', how='left')
     
+    # Mapeo de tipos de cambio a columnas y colores
+    MAPA_TIPOS = {
+        'Urbanización': {'columna': 'urbanizacion_ha', 'color': 'YlOrRd', 'nombre': 'Urbanización (ha)'},
+        'Pérdida Vegetación': {'columna': 'perdida_veg_ha', 'color': 'OrRd', 'nombre': 'Pérdida Veg (ha)'},
+        'Ganancia Vegetación': {'columna': 'ganancia_veg_ha', 'color': 'YlGn', 'nombre': 'Ganancia Veg (ha)'}
+    }
+    
+    # Determinar qué mostrar (el primero seleccionado o urbanización por defecto)
+    if tipo_cambio_seleccionado and len(tipo_cambio_seleccionado) > 0:
+        tipo_activo = tipo_cambio_seleccionado[0]
+    else:
+        tipo_activo = 'Urbanización'
+    
+    config_mapa = MAPA_TIPOS.get(tipo_activo, MAPA_TIPOS['Urbanización'])
+    
     c1, c2 = st.columns([2, 1])
     
     with c1:
+        # Indicador del tipo de cambio mostrado
+        st.caption(f"Mostrando: **{tipo_activo}**")
+        
         # Mapa Folium
         centroid = [zonas.geometry.centroid.y.mean(), zonas.geometry.centroid.x.mean()]
-        m = folium.Map(location=centroid, zoom_start=12, tiles='CartoDB positron')
+        m = folium.Map(location=centroid, zoom_start=8, tiles='CartoDB positron')
         
-        # Capa Cloropleta: Intensidad de Urbanización
+        # Capa Cloropleta según selección
         folium.Choropleth(
             geo_data=zonas_stats,
-            name='Urbanización',
+            name=tipo_activo,
             data=stats,
-            columns=['zona', 'urbanizacion_ha'],
+            columns=['zona', config_mapa['columna']],
             key_on=f'feature.properties.{col_zi}',
-            fill_color='YlOrRd',
+            fill_color=config_mapa['color'],
             fill_opacity=0.7,
             line_opacity=0.3,
-            legend_name='Urbanización (ha)',
+            legend_name=config_mapa['nombre'],
             nan_fill_color='lightgray'
         ).add_to(m)
         
-        # Capa adicional: Pérdida de Vegetación
-        folium.Choropleth(
-            geo_data=zonas_stats,
-            name='Pérdida Vegetación',
-            data=stats,
-            columns=['zona', 'perdida_veg_ha'],
-            key_on=f'feature.properties.{col_zi}',
-            fill_color='OrRd',
-            fill_opacity=0.7,
-            line_opacity=0.3,
-            legend_name='Pérdida Veg (ha)',
-            show=False
-        ).add_to(m)
+        # Agregar capas adicionales para otros tipos seleccionados (ocultas por defecto)
+        for tipo in tipo_cambio_seleccionado:
+            if tipo != tipo_activo:
+                cfg = MAPA_TIPOS.get(tipo)
+                if cfg:
+                    folium.Choropleth(
+                        geo_data=zonas_stats,
+                        name=tipo,
+                        data=stats,
+                        columns=['zona', cfg['columna']],
+                        key_on=f'feature.properties.{col_zi}',
+                        fill_color=cfg['color'],
+                        fill_opacity=0.7,
+                        line_opacity=0.3,
+                        legend_name=cfg['nombre'],
+                        show=False
+                    ).add_to(m)
         
         folium.LayerControl().add_to(m)
         st_folium(m, width=None, height=500, returned_objects=[])
@@ -459,7 +481,7 @@ def main():
     
     st.markdown("---")
     
-    mostrar_mapa_y_tabla(zonas, stats)
+    mostrar_mapa_y_tabla(zonas, stats, tipo_cambio)
     
     st.markdown("---")
     
