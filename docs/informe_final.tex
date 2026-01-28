@@ -65,20 +65,20 @@
     \vspace*{1cm}
     
     {\Large \textbf{Universidad de Santiago de Chile}}\\[0.5cm]
-    {\large Facultad de Ingenieria}\\[0.3cm]
-    {\large Departamento de Ingenieria Informatica}\\[2cm]
+    {\large Facultad de Ingeniería}\\[0.3cm]
+    {\large Departamento de Ingeniería Informática}\\[2cm]
     
     \rule{\textwidth}{1pt}\\[0.5cm]
     {\Huge \textbf{Laboratorio 2}}\\[0.3cm]
-    {\LARGE Deteccion de Cambios Urbanos}\\[0.3cm]
-    {\Large Analisis Multitemporal con Imagenes Satelitales}\\[0.5cm]
+    {\LARGE Detección de Cambios Urbanos}\\[0.3cm]
+    {\Large Análisis Multitemporal con Imágenes Satelitales}\\[0.5cm]
     \rule{\textwidth}{1pt}\\[2cm]
     
-    {\large \textbf{Desarrollo de Aplicaciones Geoinformaticas}}\\[0.5cm]
+    {\large \textbf{Desarrollo de Aplicaciones Geoinformáticas}}\\[0.5cm]
     {\large Semestre 2, 2025}\\[2cm]
     
     \begin{tabular}{ll}
-        \textbf{Autores:} & Catalina Lopez \\
+        \textbf{Autores:} & Catalina López \\
                           & Felipe Baeza \\[0.5cm]
         \textbf{Profesor:} & Prof. Francisco Parra O.\\
     \end{tabular}
@@ -98,169 +98,169 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 1. INTRODUCCION
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Introduccion}
+\section{Introducción}
 
-\subsection{Contexto y Problematica}
+\subsection{Contexto y Problemática}
 
-El territorio chileno ha experimentado profundas transformaciones en las ultimas decadas, impulsadas tanto por el crecimiento demografico como por fenomenos naturales de gran magnitud. La dinamica de expansion urbana, particularmente evidente en ciudades intermedias y zonas de reconstruccion post-desastre, genera desafios significativos para la planificacion territorial, la gestion ambiental y la toma de decisiones informadas por parte de las autoridades locales.
+El territorio chileno ha experimentado profundas transformaciones en las últimas décadas, impulsadas tanto por el crecimiento demográfico como por fenómenos naturales de gran magnitud. La dinámica de expansión urbana, particularmente evidente en ciudades intermedias y zonas de reconstrucción post-desastre, genera desafíos significativos para la planificación territorial, la gestión ambiental y la toma de decisiones informadas por parte de las autoridades locales.
 
-En este contexto, la teledeteccion satelital emerge como una herramienta fundamental para el monitoreo sistematico del territorio. Desde el lanzamiento del primer satelite Landsat en 1972, la humanidad ha acumulado un registro continuo de la superficie terrestre que permite estudiar cambios a escalas temporales que abarcan desde semanas hasta decadas. Con la llegada del programa Copernicus de la Agencia Espacial Europea y sus satelites Sentinel-2 en 2015, se dispone ahora de imagenes de alta resolucion espacial (10 metros) con una frecuencia de revision de apenas 5 dias, todo de manera completamente gratuita y abierta.
+En este contexto, la teledetección satelital emerge como una herramienta fundamental para el monitoreo sistémico del territorio. Desde el lanzamiento del primer satelite Landsat en 1972, la humanidad ha acumulado un registro continuo de la superficie terrestre que permite estudiar cambios a escalas temporales que abarcan desde semanas hasta decadas. Con la llegada del programa Copernicus de la Agencia Espacial Europea y sus satelites Sentinel-2 en 2015, se dispone ahora de imágenes de alta resolución espacial (10 metros) con una frecuencia de revisión de apenas 5 dias, todo de manera completamente gratuita y abierta.
 
-El presente proyecto surge de la necesidad de aplicar estas tecnologias al estudio de un caso particularmente relevante para Chile: la comuna de Chaiten, cuya historia reciente esta marcada por la catastrofica erupcion volcanica de 2008 y el subsecuente proceso de reconstruccion que continua hasta el dia de hoy. Este caso ofrece una oportunidad unica para estudiar como las herramientas de teledeteccion pueden documentar y cuantificar procesos de transformacion urbana en contextos de recuperacion post-desastre.
+El presente proyecto surge de la necesidad de aplicar estas tecnologías al estudio de un caso particularmente relevante para Chile: la comuna de Chaiten, cuya historia reciente esta marcada por la catastrofica erupcion volcánica de 2008 y el subsecuente proceso de reconstrucción que continua hasta el dia de hoy. Este caso ofrece una oportunidad unica para estudiar como las herramientas de teledetección pueden documentar y cuantificar procesos de transformación urbana en contextos de recuperación post-desastre.
 
 \subsection{Relevancia del Estudio}
 
 La importancia de este trabajo trasciende el ambito puramente academico. En un pais como Chile, constantemente expuesto a amenazas naturales como terremotos, erupciones volcanicas, tsunamis e incendios forestales, disponer de metodologias robustas para el monitoreo de cambios territoriales resulta fundamental para:
 
 \begin{itemize}
-    \item \textbf{Planificacion de la reconstruccion}: Permitir a las autoridades evaluar objetivamente el avance de los procesos de recuperacion urbana tras eventos catastroficos.
-    \item \textbf{Monitoreo ambiental}: Detectar perdida de cobertura vegetal, expansion de areas impermeables y otros cambios con implicancias ecosistemicas.
-    \item \textbf{Gestion del riesgo}: Identificar patrones de ocupacion del territorio que puedan incrementar la vulnerabilidad frente a futuras amenazas.
-    \item \textbf{Ordenamiento territorial}: Proveer insumos tecnicos para la actualizacion de instrumentos de planificacion como los Planes Reguladores Comunales.
+    \item \textbf{Planificación de la reconstrucción}: Permitir a las autoridades evaluar objetivamente el avance de los procesos de recuperación urbana tras eventos catastroficos.
+    \item \textbf{Monitoreo ambiental}: Detectar perdida de cobertura vegetal, expansion de áreas impermeables y otros cambios con implicancias ecosistemicas.
+    \item \textbf{Gestión del riesgo}: Identificar patrones de ocupación del territorio que puedan incrementar la vulnerabilidad frente a futuras amenazas.
+    \item \textbf{Ordenamiento territorial}: Proveer insumos técnicos para la actualización de instrumentos de planificación como los Planes Reguladores Comunales.
 \end{itemize}
 
 \subsection{Objetivo General}
 
-El objetivo general de este trabajo es desarrollar un sistema integral de deteccion y cuantificacion de cambios urbanos utilizando series temporales de imagenes satelitales Sentinel-2, aplicando tecnicas avanzadas de teledeteccion, analisis espacial y visualizacion interactiva, tomando como caso de estudio la comuna de Chaiten en la Region de Los Lagos.
+El objetivo general de este trabajo es desarrollar un sistema integral de detección y cuantificación de cambios urbanos utilizando series temporales de imágenes satelitales Sentinel-2, aplicando técnicas avanzadas de teledetección, análisis espacial y visualización interactiva, tomando como caso de estudio la comuna de Chaiten en la Region de Los Lagos.
 
-\subsection{Objetivos Especificos}
+\subsection{Objetivos Específicos}
 
-Para alcanzar el objetivo general, se plantean los siguientes objetivos especificos:
+Para alcanzar el objetivo general, se plantean los siguientes objetivos específicos:
 
 \begin{enumerate}
-    \item Disenar e implementar un flujo de trabajo automatizado para la adquisicion y preprocesamiento de series temporales de imagenes Sentinel-2 correspondientes al periodo 2020-2024.
+    \item Disenar e implementar un flujo de trabajo automatizado para la adquisición y preprocesamiento de series temporales de imágenes Sentinel-2 correspondientes al periodo 2020-2024.
     
-    \item Calcular y analizar indices espectrales multitemporales (NDVI, NDBI, NDWI y BSI) que permitan caracterizar de manera cuantitativa la evolucion de la cobertura del suelo.
+    \item Calcular y analizar indices espectrales multitemporales (NDVI, NDBI, NDWI y BSI) que permitan caracterizar de manera cuantitativa la evolución de la cobertura del suelo.
     
-    \item Implementar y evaluar comparativamente dos metodologias de deteccion de cambios: diferencia de indices y clasificacion multiindice post-clasificacion.
+    \item Implementar y evaluar comparativamente dos metodologías de detección de cambios: diferencia de índices y clasificación multiíndice post-clasificación.
     
-    \item Clasificar los cambios detectados segun su naturaleza: urbanizacion, perdida de vegetacion, ganancia de vegetacion y cambios en cuerpos de agua.
+    \item Clasificar los cambios detectados según su naturaleza: urbanización, pérdida de vegetación, ganancia de vegetación y cambios en cuerpos de agua.
     
-    \item Desarrollar un analisis zonal que permita cuantificar los cambios en terminos de superficie afectada (hectareas) para diferentes sectores del area de estudio.
+    \item Desarrollar un análisis zonal que permita cuantificar los cambios en términos de superficie afectada (hectáreas) para diferentes sectores del área de estudio.
     
-    \item Construir un dashboard web interactivo utilizando Streamlit que facilite la exploracion visual de los resultados por parte de usuarios no especialistas.
+    \item Construir un dashboard web interactivo utilizando Streamlit que facilite la exploración visual de los resultados por parte de usuarios no especialistas.
     
-    \item Generar productos de visualizacion complementarios, incluyendo animaciones temporales en formato GIF que ilustren la evolucion de los indices a lo largo del periodo de estudio.
+    \item Generar productos de visualización complementarios, incluyendo animaciones temporales en formato GIF que ilustren la evolución de los índices a lo largo del periodo de estudio.
 \end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 2. AREA DE ESTUDIO
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Descripcion del Area y Periodo de Estudio}
+\section{Descripción del Area y Periodo de Estudio}
 
-\subsection{Localizacion Geografica y Caracteristicas del Territorio}
+\subsection{Localización Geográfica y Características del Territorio}
 
-El area de estudio se localiza en la \textbf{Comuna de Chaiten}, ubicada en la Provincia de Palena, Region de Los Lagos, en el extremo norte de la Patagonia chilena. Esta comuna se situa en una zona de transicion geografica donde confluyen los Andes patagonicos, los fiordos australes y los bosques templados lluviosos, configurando un paisaje de extraordinaria belleza pero tambien de alta complejidad en terminos de amenazas naturales.
+El área de estudio se localiza en la \textbf{Comuna de Chaitén}, ubicada en la Provincia de Palena, Región de Los Lagos, en el extremo norte de la Patagonia chilena. Esta comuna se sitúa en una zona de transición geográfica donde confluyen los Andes patagonicos, los fiordos australes y los bosques templados lluviosos, configurando un paisaje de extraordinaria belleza pero también de alta complejidad en términos de amenazas naturales.
 
-La ciudad de Chaiten, capital comunal, se emplaza en una angosta planicie costera al pie del volcan homonymous, en la ribera sur del estuario del rio Blanco. Esta ubicacion, que le confiere un escenario paisajistico privilegiado, la expone simultaneamente a multiples amenazas: volcanismo activo, inundaciones fluviales, remocion en masa y marejadas.
+La ciudad de Chaitén, capital comunal, se emplaza en una angosta planicie costera al pie del volcan homonymous, en la ribera sur del estuario del rio Blanco. Esta ubicación, que le confiere un escenario paisajístico privilegiado, la expone simultaneamente a multiples amenazas: volcanismo activo, inundaciones fluviales, remocion en masa y marejadas.
 
 \begin{table}[H]
     \centering
-    \caption{Caracteristicas geograficas y administrativas del area de estudio}
+    \caption{Características geográficas y administrativas del área de estudio}
     \label{tab:area_estudio}
     \begin{tabular}{ll}
         \toprule
         \textbf{Parametro} & \textbf{Valor} \\
         \midrule
-        Comuna & Chaiten \\
+        Comuna & Chaitén \\
         Provincia & Palena \\
-        Region & Los Lagos (X Region) \\
+        Región & Los Lagos (X Región) \\
         Coordenadas del centro urbano & 42 54' S, 72 42' W \\
-        Bounding Box del analisis & [-72.76, -42.96, -72.64, -42.86] \\
+        Bounding Box del análisis & [-72.76, -42.96, -72.64, -42.86] \\
         Sistema de referencia & EPSG:4326 (WGS84) \\
         Superficie aproximada & 120 km$^2$ \\
         Rango altitudinal & 0 a 500 msnm \\
         Clima & Templado lluvioso \\
-        Precipitacion media anual & Mayor a 3,000 mm \\
+        Precipitación media anual & Mayor a 3,000 mm \\
         \bottomrule
     \end{tabular}
 \end{table}
 
-\subsection{La Erupcion de 2008: Un Evento que Cambio la Historia de Chaiten}
+\subsection{La Erupción de 2008: Un Evento que Cambio la Historia de Chaitén}
 
-Para comprender cabalmente la relevancia de estudiar los cambios territoriales en Chaiten, es indispensable conocer el evento que marco un antes y un despues en la historia de esta ciudad: la erupcion del volcan Chaiten iniciada el 2 de mayo de 2008.
+Para comprender cabalmente la relevancia de estudiar los cambios territoriales en Chaitén, es indispensable conocer el evento que marco un antes y un despues en la historia de esta ciudad: la erupción del volcán Chaitén iniciada el 2 de mayo de 2008.
 
-\subsubsection{Cronologia del Desastre}
+\subsubsection{Cronología del Desastre}
 
-El volcan Chaiten habia permanecido en silencio durante aproximadamente 9,400 anios. Ningun habitante actual de la zona tenia memoria de actividad volcanica, y el volcan no figuraba entre aquellos considerados de alta prioridad para el monitoreo. Sin embargo, en la madrugada del 2 de mayo de 2008, una violenta erupcion explosiva sorprendio a la poblacion.
+El volcán Chaitén habia permanecido en silencio durante aproximadamente 9,400 años. Ninguno de los habitantes actuales de la zona tenia memoria de actividad volcánica, y el volcán no figuraba entre aquellos considerados de alta prioridad para el monitoreo. Sin embargo, en la madrugada del 2 de mayo de 2008, una violenta erupción explosiva sorprendio a la población.
 
-Los eventos se sucedieron con dramatica rapidez:
+Los eventos se sucedieron con dramática rapidez:
 
 \begin{itemize}
-    \item \textbf{2 de mayo de 2008}: Inicio de la erupcion con columnas de ceniza que alcanzaron 20 km de altura. Inmediatamente se ordena la evacuacion de la ciudad.
+    \item \textbf{2 de mayo de 2008}: Inicio de la erupción con columnas de ceniza que alcanzaron 20 km de altura. Inmediatamente se ordena la evacuación de la ciudad.
     
-    \item \textbf{3-6 de mayo}: En menos de 48 horas, los aproximadamente 4,500 habitantes de Chaiten son evacuados a ciudades cercanas como Puerto Montt, Futaleufu y Chilenotico. La operacion de evacuacion es considerada un exito logistico.
+    \item \textbf{3-6 de mayo}: En menos de 48 horas, los aproximadamente 4,500 habitantes de Chaitén son evacuados a ciudades cercanas como Puerto Montt, Futaleufu y Chilenotico. La operacion de evacuación es considerada un exito logistico.
     
-    \item \textbf{Mayo-Junio de 2008}: La erupcion continua con fases explosivas y efusivas. El rio Blanco, represado por material volcanico, cambia dramaticamente su cauce e inunda el sector norte de la ciudad.
+    \item \textbf{Mayo-Junio de 2008}: La erupción continua con fases explosivas y efusivas. El rio Blanco, represado por material volcánico, cambia dramaticamente su cauce e inunda el sector norte de la ciudad.
     
     \item \textbf{Febrero de 2009}: Un lahar destruye gran parte del casco historico. Se estima que un 80\% de las viviendas sufren dano significativo.
     
-    \item \textbf{2010}: El gobierno decreta que la ciudad no sera reconstruida en su ubicacion original y propone trasladarla a Santa Barbara, 10 km al norte.
+    \item \textbf{2010}: El gobierno decreta que la ciudad no sera reconstruida en su ubicación original y propone trasladarla a Santa Barbara, 10 km al norte.
     
-    \item \textbf{2011 en adelante}: Contra las decisiones gubernamentales, los habitantes comienzan a retornar espontaneamente e inician por cuenta propia la reconstruccion. En 2012, el gobierno reconoce esta realidad y comienza a apoyar la reconstruccion in situ.
+    \item \textbf{2011 en adelante}: Contra las decisiones gubernamentales, los habitantes comienzan a retornar espontaneamente e inician por cuenta propia la reconstrucción. En 2012, el gobierno reconoce esta realidad y comienza a apoyar la reconstrucción in situ.
 \end{itemize}
 
-\subsubsection{Situacion Actual y Proceso de Reconstruccion}
+\subsubsection{Situación Actual y Proceso de Reconstrucción}
 
-Quince anios despues de la erupcion, Chaiten continua en un proceso de reconstruccion y reinvencion. La poblacion ha retornado gradualmente, aunque sin alcanzar los niveles pre-erupcion. La ciudad ha sido rediseñada para convivir con el riesgo volcanico, con nuevas obras de mitigacion en el rio Blanco y planes de evacuacion actualizados.
+Quince años después de la erupción, Chaitén continua en un proceso de reconstrucción y reinvención. La población ha retornado gradualmente, aunque sin alcanzar los niveles pre-erupción. La ciudad ha sido rediseñada para convivir con el riesgo volcánico, con nuevas obras de mitigación en el río Blanco y planes de evacuación actualizados.
 
-Este prolongado proceso de transformacion urbana constituye un caso de estudio excepcional para la teledeteccion: permite observar como una ciudad emerge, crece y se transforma en el contexto de recuperacion de un desastre natural, todo ello documentado por el registro continuo de los satelites Sentinel-2.
+Este prolongado proceso de transformación urbana constituye un caso de estudio excepcional para la teledetección: permite observar como una ciudad emerge, crece y se transforma en el contexto de recuperación de un desastre natural, todo ello documentado por el registro continuo de los satelites Sentinel-2.
 
-\subsection{Justificacion de la Seleccion del Area de Estudio}
+\subsection{Justificación de la Seleccion del Área de Estudio}
 
-La eleccion de Chaiten como area de estudio responde a un conjunto de criterios tanto cientificos como practicos:
+La eleccion de Chaitén como área de estudio responde a un conjunto de criterios tanto científicos como prácticos:
 
 \begin{enumerate}
-    \item \textbf{Dinamismo territorial}: A diferencia de ciudades con patrones de crecimiento graduales y predecibles, Chaiten exhibe transformaciones rapidas y significativas asociadas a la reconstruccion, lo que genera señales claras y detectables en las imagenes satelitales.
+    \item \textbf{Dinamismo territorial}: A diferencia de ciudades con patrones de crecimiento graduales y predecibles, Chaitén exhibe transformaciones rápidas y significativas asociadas a la reconstrucción, lo que genera señales claras y detectables en las imágenes satelitales.
     
-    \item \textbf{Escala apropiada}: Con aproximadamente 120 km$^2$ de superficie, el area cumple con los requisitos del laboratorio (100-500 km$^2$) y permite un procesamiento computacionalmente manejable sin sacrificar riqueza de detalle.
+    \item \textbf{Escala apropiada}: Con aproximadamente 120 km$^2$ de superficie, el área cumple con los requisitos del laboratorio (100-500 km$^2$) y permite un procesamiento computacionalmente manejable sin sacrificar riqueza de detalle.
     
-    \item \textbf{Diversidad de coberturas}: El area incluye zona urbana, bosque nativo, matorrales, cuerpos de agua (rio, estuario), suelo desnudo volcanico y areas de transicion, lo que permite probar los algoritmos de clasificacion en multiples contextos.
+    \item \textbf{Diversidad de coberturas}: El área incluye zona urbana, bosque nativo, matorrales, cuerpos de agua (río, estuario), suelo desnudo volcánico y áreas de transición, lo que permite probar los algoritmos de clasificación en múltiples contextos.
     
-    \item \textbf{Disponibilidad de imagenes}: Pese a la alta pluviosidad de la zona, los meses de verano ofrecen ventanas de baja nubosidad suficientes para obtener imagenes de calidad aceptable en cada anio del periodo de estudio.
+    \item \textbf{Disponibilidad de imágenes}: Pese a la alta pluviosidad de la zona, los meses de verano ofrecen ventanas de baja nubosidad suficientes para obtener imágenes de calidad aceptable en cada año del periodo de estudio.
     
-    \item \textbf{Relevancia para la gestion publica}: Los resultados de este tipo de estudios pueden contribuir directamente a la toma de decisiones en materia de planificacion territorial, monitoreo ambiental y gestion del riesgo en la comuna.
+    \item \textbf{Relevancia para la gestión publica}: Los resultados de este tipo de estudios pueden contribuir directamente a la toma de decisiones en materia de planificación territorial, monitoreo ambiental y gestión del riesgo en la comuna.
 \end{enumerate}
 
-\subsection{Caracterizacion del Periodo de Analisis}
+\subsection{Caracterización del Periodo de Análisis}
 
-El analisis abarca el quinquenio 2020-2024, un periodo seleccionado estrategicamente por las siguientes razones:
+El análisis abarca el quinquenio 2020-2024, un periodo seleccionado estratégicamente por las siguientes razones:
 
 \begin{table}[H]
     \centering
-    \caption{Parametros temporales del analisis}
+    \caption{Parámetros temporales del análisis}
     \label{tab:periodo}
     \begin{tabular}{ll}
         \toprule
-        \textbf{Parametro} & \textbf{Valor/Descripcion} \\
+        \textbf{Parámetro} & \textbf{Valor/Descripción} \\
         \midrule
         Rango temporal & Enero 2020 - Febrero 2024 \\
-        Duracion & 5 anios \\
-        Epoca del anio & Verano austral (Enero-Febrero) \\
-        Numero de compositos & 5 (uno por anio) \\
-        Criterio de nubosidad & Maximo 10\% de cobertura \\
+        Duración & 5 años \\
+        Época del año & Verano austral (Enero-Febrero) \\
+        Número de compositos & 5 (uno por año) \\
+        Criterio de nubosidad & Máximo 10\% de cobertura \\
         Sensor utilizado & Sentinel-2 MSI \\
         Nivel de producto & Level-2A (reflectancia de superficie) \\
         \bottomrule
     \end{tabular}
 \end{table}
 
-La restriccion al periodo estival se justifica por multiples razones tecnicas y cientificas:
+La restricción al periodo estival se justifica por múltiples razones técnicas y científicas:
 
 \begin{itemize}
-    \item \textbf{Minimizacion de la cobertura nubosa}: Chaiten recibe mas de 3,000 mm de precipitacion anual, concentrada principalmente entre otono e invierno. El verano ofrece las mejores condiciones de cielo despejado.
+    \item \textbf{Minimización de la cobertura nubosa}: Chaitén recibe más de 3,000 mm de precipitación anual, concentrada principalmente entre otoño e invierno. El verano ofrece las mejores condiciones de cielo despejado.
     
-    \item \textbf{Maximizacion de la señal vegetativa}: Durante el verano, la vegetacion templada alcanza su maximo vigor fotosintético, lo que amplifica las diferencias entre areas vegetadas y no vegetadas en los indices espectrales.
+    \item \textbf{Maximización de la señal vegetativa}: Durante el verano, la vegetación templada alcanza su máximo vigor fotosintético, lo que amplifica las diferencias entre áreas vegetadas y no vegetadas en los índices espectrales.
     
-    \item \textbf{Optimas condiciones de iluminacion}: Los angulos solares mas elevados del verano reducen las sombras topograficas y mejoran la calidad radiometrica de las imagenes.
+    \item \textbf{Optimas condiciones de iluminación}: Los ángulos solares más elevados del verano reducen las sombras topográficas y mejoran la calidad radiométrica de las imágenes.
     
-    \item \textbf{Consistencia fenologica interanual}: Al comparar invariablemente imagenes de la misma epoca del anio, se minimizan las diferencias atribuibles a cambios estacionales, permitiendo aislar cambios reales de cobertura.
+    \item \textbf{Consistencia fenológica interanual}: Al comparar invariablemente imágenes de la misma época del año, se minimizan las diferencias atribuibles a cambios estacionales, permitiendo aislar cambios reales de cobertura.
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 3. METODOLOGIA
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Metodologia Aplicada}
+\section{Metodología Aplicada}
 
 \subsection{Vision General del Flujo de Trabajo}
 
