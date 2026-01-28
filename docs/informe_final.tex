@@ -41,7 +41,7 @@
 % Encabezados
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[L]{Laboratorio 2: Deteccion de Cambios Urbanos}
+\fancyhead[L]{Laboratorio 2: Detección de Cambios Urbanos}
 \fancyhead[R]{Geoinformatica - USACH}
 \fancyfoot[C]{\thepage}
 
@@ -104,33 +104,33 @@
 
 El territorio chileno ha experimentado profundas transformaciones en las últimas décadas, impulsadas tanto por el crecimiento demográfico como por fenómenos naturales de gran magnitud. La dinámica de expansión urbana, particularmente evidente en ciudades intermedias y zonas de reconstrucción post-desastre, genera desafíos significativos para la planificación territorial, la gestión ambiental y la toma de decisiones informadas por parte de las autoridades locales.
 
-En este contexto, la teledetección satelital emerge como una herramienta fundamental para el monitoreo sistémico del territorio. Desde el lanzamiento del primer satelite Landsat en 1972, la humanidad ha acumulado un registro continuo de la superficie terrestre que permite estudiar cambios a escalas temporales que abarcan desde semanas hasta decadas. Con la llegada del programa Copernicus de la Agencia Espacial Europea y sus satelites Sentinel-2 en 2015, se dispone ahora de imágenes de alta resolución espacial (10 metros) con una frecuencia de revisión de apenas 5 dias, todo de manera completamente gratuita y abierta.
+En este contexto, la teledetección satelital emerge como una herramienta fundamental para el monitoreo sistémico del territorio. Desde el lanzamiento del primer satélite Landsat en 1972, la humanidad ha acumulado un registro continuo de la superficie terrestre que permite estudiar cambios a escalas temporales que abarcan desde semanas hasta décadas. Con la llegada del programa Copernicus de la Agencia Espacial Europea y sus satélites Sentinel-2 en 2015, se dispone ahora de imágenes de alta resolución espacial (10 metros) con una frecuencia de revisión de apenas 5 días, todo de manera completamente gratuita y abierta.
 
-El presente proyecto surge de la necesidad de aplicar estas tecnologías al estudio de un caso particularmente relevante para Chile: la comuna de Chaiten, cuya historia reciente esta marcada por la catastrofica erupcion volcánica de 2008 y el subsecuente proceso de reconstrucción que continua hasta el dia de hoy. Este caso ofrece una oportunidad unica para estudiar como las herramientas de teledetección pueden documentar y cuantificar procesos de transformación urbana en contextos de recuperación post-desastre.
+El presente proyecto surge de la necesidad de aplicar estas tecnologías al estudio de un caso particularmente relevante para Chile: la comuna de Chaitén, cuya historia reciente está marcada por la catastrófica erupción volcánica de 2008 y el subsecuente proceso de reconstrucción que continúa hasta el día de hoy. Este caso ofrece una oportunidad única para estudiar cómo las herramientas de teledetección pueden documentar y cuantificar procesos de transformación urbana en contextos de recuperación post-desastre.
 
 \subsection{Relevancia del Estudio}
 
-La importancia de este trabajo trasciende el ambito puramente academico. En un pais como Chile, constantemente expuesto a amenazas naturales como terremotos, erupciones volcanicas, tsunamis e incendios forestales, disponer de metodologias robustas para el monitoreo de cambios territoriales resulta fundamental para:
+La importancia de este trabajo trasciende el ámbito puramente académico. En un país como Chile, constantemente expuesto a amenazas naturales como terremotos, erupciones volcánicas, tsunamis e incendios forestales, disponer de metodologías robustas para el monitoreo de cambios territoriales resulta fundamental para:
 
 \begin{itemize}
-    \item \textbf{Planificación de la reconstrucción}: Permitir a las autoridades evaluar objetivamente el avance de los procesos de recuperación urbana tras eventos catastroficos.
-    \item \textbf{Monitoreo ambiental}: Detectar perdida de cobertura vegetal, expansion de áreas impermeables y otros cambios con implicancias ecosistemicas.
+    \item \textbf{Planificación de la reconstrucción}: Permitir a las autoridades evaluar objetivamente el avance de los procesos de recuperación urbana tras eventos catastróficos.
+    \item \textbf{Monitoreo ambiental}: Detectar pérdida de cobertura vegetal, expansión de áreas impermeables y otros cambios con implicancias ecosistémicas.
     \item \textbf{Gestión del riesgo}: Identificar patrones de ocupación del territorio que puedan incrementar la vulnerabilidad frente a futuras amenazas.
     \item \textbf{Ordenamiento territorial}: Proveer insumos técnicos para la actualización de instrumentos de planificación como los Planes Reguladores Comunales.
 \end{itemize}
 
 \subsection{Objetivo General}
 
-El objetivo general de este trabajo es desarrollar un sistema integral de detección y cuantificación de cambios urbanos utilizando series temporales de imágenes satelitales Sentinel-2, aplicando técnicas avanzadas de teledetección, análisis espacial y visualización interactiva, tomando como caso de estudio la comuna de Chaiten en la Region de Los Lagos.
+El objetivo general de este trabajo es desarrollar un sistema integral de detección y cuantificación de cambios urbanos utilizando series temporales de imágenes satelitales Sentinel-2, aplicando técnicas avanzadas de teledetección, análisis espacial y visualización interactiva, tomando como caso de estudio la comuna de Chaitén en la Región de Los Lagos.
 
 \subsection{Objetivos Específicos}
 
 Para alcanzar el objetivo general, se plantean los siguientes objetivos específicos:
 
 \begin{enumerate}
-    \item Disenar e implementar un flujo de trabajo automatizado para la adquisición y preprocesamiento de series temporales de imágenes Sentinel-2 correspondientes al periodo 2020-2024.
+    \item Diseñar e implementar un flujo de trabajo automatizado para la adquisición y preprocesamiento de series temporales de imágenes Sentinel-2 correspondientes al periodo 2020-2024.
     
-    \item Calcular y analizar indices espectrales multitemporales (NDVI, NDBI, NDWI y BSI) que permitan caracterizar de manera cuantitativa la evolución de la cobertura del suelo.
+    \item Calcular y analizar índices espectrales multitemporales (NDVI, NDBI, NDWI y BSI) que permitan caracterizar de manera cuantitativa la evolución de la cobertura del suelo.
     
     \item Implementar y evaluar comparativamente dos metodologías de detección de cambios: diferencia de índices y clasificación multiíndice post-clasificación.
     
@@ -146,13 +146,13 @@ Para alcanzar el objetivo general, se plantean los siguientes objetivos específ
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 2. AREA DE ESTUDIO
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Descripción del Area y Periodo de Estudio}
+\section{Descripción del Área y Periodo de Estudio}
 
 \subsection{Localización Geográfica y Características del Territorio}
 
-El área de estudio se localiza en la \textbf{Comuna de Chaitén}, ubicada en la Provincia de Palena, Región de Los Lagos, en el extremo norte de la Patagonia chilena. Esta comuna se sitúa en una zona de transición geográfica donde confluyen los Andes patagonicos, los fiordos australes y los bosques templados lluviosos, configurando un paisaje de extraordinaria belleza pero también de alta complejidad en términos de amenazas naturales.
+El área de estudio se localiza en la \textbf{Comuna de Chaitén}, ubicada en la Provincia de Palena, Región de Los Lagos, en el extremo norte de la Patagonia chilena. Esta comuna se sitúa en una zona de transición geográfica donde confluyen los Andes patagónicos, los fiordos australes y los bosques templados lluviosos, configurando un paisaje de extraordinaria belleza pero también de alta complejidad en términos de amenazas naturales.
 
-La ciudad de Chaitén, capital comunal, se emplaza en una angosta planicie costera al pie del volcan homonymous, en la ribera sur del estuario del rio Blanco. Esta ubicación, que le confiere un escenario paisajístico privilegiado, la expone simultaneamente a multiples amenazas: volcanismo activo, inundaciones fluviales, remocion en masa y marejadas.
+La ciudad de Chaitén, capital comunal, se emplaza en una angosta planicie costera al pie del volcán homónimo, en la ribera sur del estuario del río Blanco. Esta ubicación, que le confiere un escenario paisajístico privilegiado, la expone simultáneamente a múltiples amenazas: volcanismo activo, inundaciones fluviales, remoción en masa y marejadas.
 
 \begin{table}[H]
     \centering
@@ -176,39 +176,39 @@ La ciudad de Chaitén, capital comunal, se emplaza en una angosta planicie coste
     \end{tabular}
 \end{table}
 
-\subsection{La Erupción de 2008: Un Evento que Cambio la Historia de Chaitén}
+\subsection{La Erupción de 2008: Un Evento que Cambió la Historia de Chaitén}
 
-Para comprender cabalmente la relevancia de estudiar los cambios territoriales en Chaitén, es indispensable conocer el evento que marco un antes y un despues en la historia de esta ciudad: la erupción del volcán Chaitén iniciada el 2 de mayo de 2008.
+Para comprender cabalmente la relevancia de estudiar los cambios territoriales en Chaitén, es indispensable conocer el evento que marcó un antes y un después en la historia de esta ciudad: la erupción del volcán Chaitén iniciada el 2 de mayo de 2008.
 
 \subsubsection{Cronología del Desastre}
 
-El volcán Chaitén habia permanecido en silencio durante aproximadamente 9,400 años. Ninguno de los habitantes actuales de la zona tenia memoria de actividad volcánica, y el volcán no figuraba entre aquellos considerados de alta prioridad para el monitoreo. Sin embargo, en la madrugada del 2 de mayo de 2008, una violenta erupción explosiva sorprendio a la población.
+El volcán Chaitén había permanecido en silencio durante aproximadamente 9,400 años. Ninguno de los habitantes actuales de la zona tenía memoria de actividad volcánica, y el volcán no figuraba entre aquellos considerados de alta prioridad para el monitoreo. Sin embargo, en la madrugada del 2 de mayo de 2008, una violenta erupción explosiva sorprendió a la población.
 
 Los eventos se sucedieron con dramática rapidez:
 
 \begin{itemize}
     \item \textbf{2 de mayo de 2008}: Inicio de la erupción con columnas de ceniza que alcanzaron 20 km de altura. Inmediatamente se ordena la evacuación de la ciudad.
     
-    \item \textbf{3-6 de mayo}: En menos de 48 horas, los aproximadamente 4,500 habitantes de Chaitén son evacuados a ciudades cercanas como Puerto Montt, Futaleufu y Chilenotico. La operacion de evacuación es considerada un exito logistico.
+    \item \textbf{3-6 de mayo}: En menos de 48 horas, los aproximadamente 4,500 habitantes de Chaitén son evacuados a ciudades cercanas como Puerto Montt, Futaleufú y Chiloé. La operación de evacuación es considerada un éxito logístico.
     
-    \item \textbf{Mayo-Junio de 2008}: La erupción continua con fases explosivas y efusivas. El rio Blanco, represado por material volcánico, cambia dramaticamente su cauce e inunda el sector norte de la ciudad.
+    \item \textbf{Mayo-Junio de 2008}: La erupción continúa con fases explosivas y efusivas. El río Blanco, represado por material volcánico, cambia dramáticamente su cauce e inunda el sector norte de la ciudad.
     
-    \item \textbf{Febrero de 2009}: Un lahar destruye gran parte del casco historico. Se estima que un 80\% de las viviendas sufren dano significativo.
+    \item \textbf{Febrero de 2009}: Un lahar destruye gran parte del casco histórico. Se estima que un 80\% de las viviendas sufren daño significativo.
     
-    \item \textbf{2010}: El gobierno decreta que la ciudad no sera reconstruida en su ubicación original y propone trasladarla a Santa Barbara, 10 km al norte.
+    \item \textbf{2010}: El gobierno decreta que la ciudad no será reconstruida en su ubicación original y propone trasladarla a Santa Bárbara, 10 km al norte.
     
-    \item \textbf{2011 en adelante}: Contra las decisiones gubernamentales, los habitantes comienzan a retornar espontaneamente e inician por cuenta propia la reconstrucción. En 2012, el gobierno reconoce esta realidad y comienza a apoyar la reconstrucción in situ.
+    \item \textbf{2011 en adelante}: Contra las decisiones gubernamentales, los habitantes comienzan a retornar espontáneamente e inician por cuenta propia la reconstrucción. En 2012, el gobierno reconoce esta realidad y comienza a apoyar la reconstrucción in situ.
 \end{itemize}
 
 \subsubsection{Situación Actual y Proceso de Reconstrucción}
 
-Quince años después de la erupción, Chaitén continua en un proceso de reconstrucción y reinvención. La población ha retornado gradualmente, aunque sin alcanzar los niveles pre-erupción. La ciudad ha sido rediseñada para convivir con el riesgo volcánico, con nuevas obras de mitigación en el río Blanco y planes de evacuación actualizados.
+Quince años después de la erupción, Chaitén continúa en un proceso de reconstrucción y reinvención. La población ha retornado gradualmente, aunque sin alcanzar los niveles pre-erupción. La ciudad ha sido rediseñada para convivir con el riesgo volcánico, con nuevas obras de mitigación en el río Blanco y planes de evacuación actualizados.
 
-Este prolongado proceso de transformación urbana constituye un caso de estudio excepcional para la teledetección: permite observar como una ciudad emerge, crece y se transforma en el contexto de recuperación de un desastre natural, todo ello documentado por el registro continuo de los satelites Sentinel-2.
+Este prolongado proceso de transformación urbana constituye un caso de estudio excepcional para la teledetección: permite observar cómo una ciudad emerge, crece y se transforma en el contexto de recuperación de un desastre natural, todo ello documentado por el registro continuo de los satélites Sentinel-2.
 
-\subsection{Justificación de la Seleccion del Área de Estudio}
+\subsection{Justificación de la Selección del Área de Estudio}
 
-La eleccion de Chaitén como área de estudio responde a un conjunto de criterios tanto científicos como prácticos:
+La elección de Chaitén como área de estudio responde a un conjunto de criterios tanto científicos como prácticos:
 
 \begin{enumerate}
     \item \textbf{Dinamismo territorial}: A diferencia de ciudades con patrones de crecimiento graduales y predecibles, Chaitén exhibe transformaciones rápidas y significativas asociadas a la reconstrucción, lo que genera señales claras y detectables en las imágenes satelitales.
@@ -237,7 +237,7 @@ El análisis abarca el quinquenio 2020-2024, un periodo seleccionado estratégic
         Rango temporal & Enero 2020 - Febrero 2024 \\
         Duración & 5 años \\
         Época del año & Verano austral (Enero-Febrero) \\
-        Número de compositos & 5 (uno por año) \\
+        Número de compósitos & 5 (uno por año) \\
         Criterio de nubosidad & Máximo 10\% de cobertura \\
         Sensor utilizado & Sentinel-2 MSI \\
         Nivel de producto & Level-2A (reflectancia de superficie) \\
@@ -252,7 +252,7 @@ La restricción al periodo estival se justifica por múltiples razones técnicas
     
     \item \textbf{Maximización de la señal vegetativa}: Durante el verano, la vegetación templada alcanza su máximo vigor fotosintético, lo que amplifica las diferencias entre áreas vegetadas y no vegetadas en los índices espectrales.
     
-    \item \textbf{Optimas condiciones de iluminación}: Los ángulos solares más elevados del verano reducen las sombras topográficas y mejoran la calidad radiométrica de las imágenes.
+    \item \textbf{Óptimas condiciones de iluminación}: Los ángulos solares más elevados del verano reducen las sombras topográficas y mejoran la calidad radiométrica de las imágenes.
     
     \item \textbf{Consistencia fenológica interanual}: Al comparar invariablemente imágenes de la misma época del año, se minimizan las diferencias atribuibles a cambios estacionales, permitiendo aislar cambios reales de cobertura.
 \end{itemize}
@@ -262,36 +262,36 @@ La restricción al periodo estival se justifica por múltiples razones técnicas
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Metodología Aplicada}
 
-\subsection{Vision General del Flujo de Trabajo}
+\subsection{Visión General del Flujo de Trabajo}
 
-La metodologia desarrollada sigue un flujo de trabajo estructurado en cinco fases claramente diferenciadas, cada una implementada mediante scripts de Python que garantizan la reproducibilidad del analisis:
+La metodología desarrollada sigue un flujo de trabajo estructurado en cinco fases claramente diferenciadas, cada una implementada mediante scripts de Python que garantizan la reproducibilidad del análisis:
 
 \begin{enumerate}
-    \item \textbf{Fase de Adquisicion}: Descarga automatizada de imagenes Sentinel-2 desde el Copernicus Data Space, junto con datos vectoriales complementarios de fuentes abiertas.
+    \item \textbf{Fase de Adquisición}: Descarga automatizada de imágenes Sentinel-2 desde el Copernicus Data Space, junto con datos vectoriales complementarios de fuentes abiertas.
     
-    \item \textbf{Fase de Preprocesamiento}: Calculo de indices espectrales (NDVI, NDBI, NDWI, BSI) para cada imagen de la serie temporal.
+    \item \textbf{Fase de Preprocesamiento}: Cálculo de índices espectrales (NDVI, NDBI, NDWI, BSI) para cada imagen de la serie temporal.
     
-    \item \textbf{Fase de Deteccion}: Aplicacion de dos algoritmos de deteccion de cambios que identifican y clasifican las transformaciones ocurridas.
+    \item \textbf{Fase de Detección}: Aplicación de dos algoritmos de detección de cambios que identifican y clasifican las transformaciones ocurridas.
     
-    \item \textbf{Fase de Cuantificacion}: Analisis zonal que traduce los resultados en metricas comprensibles (hectareas, porcentajes).
+    \item \textbf{Fase de Cuantificación}: Análisis zonal que traduce los resultados en métricas comprensibles (hectáreas, porcentajes).
     
-    \item \textbf{Fase de Visualizacion}: Generacion de productos graficos estaticos, animaciones temporales y un dashboard interactivo.
+    \item \textbf{Fase de Visualización}: Generación de productos gráficos estáticos, animaciones temporales y un dashboard interactivo.
 \end{enumerate}
 
 \subsection{Adquisicion y Fuentes de Datos}
 
-\subsubsection{Descripcion del Satelite Sentinel-2}
+\subsubsection{Descripción del Satélite Sentinel-2}
 
-Sentinel-2 es una constelacion de dos satelites gemelos (Sentinel-2A y Sentinel-2B) operados por la Agencia Espacial Europea como parte del programa Copernicus de la Union Europea. Estos satelites fueron disenados especificamente para el monitoreo terrestre y ofrecen caracteristicas ideales para estudios de cambio de uso de suelo:
+Sentinel-2 es una constelación de dos satélites gemelos (Sentinel-2A y Sentinel-2B) operados por la Agencia Espacial Europea como parte del programa Copernicus de la Unión Europea. Estos satélites fueron diseñados específicamente para el monitoreo terrestre y ofrecen características ideales para estudios de cambio de uso de suelo:
 
 \begin{itemize}
-    \item \textbf{Alta resolucion espacial}: Bandas en el visible y NIR con 10 metros de resolucion, suficiente para detectar cambios a escala de manzana urbana.
+    \item \textbf{Alta resolución espacial}: Bandas en el visible y NIR con 10 metros de resolución, suficiente para detectar cambios a escala de manzana urbana.
     
-    \item \textbf{Amplio rango espectral}: 13 bandas desde el visible hasta el infrarrojo de onda corta, permitiendo calcular multiples indices espectrales.
+    \item \textbf{Amplio rango espectral}: 13 bandas desde el visible hasta el infrarrojo de onda corta, permitiendo calcular múltiples índices espectrales.
     
-    \item \textbf{Alta frecuencia temporal}: Tiempo de revisita de 5 dias con ambos satelites, aumentando la probabilidad de obtener imagenes libres de nubes.
+    \item \textbf{Alta frecuencia temporal}: Tiempo de revisita de 5 días con ambos satélites, aumentando la probabilidad de obtener imágenes libres de nubes.
     
-    \item \textbf{Acceso gratuito y abierto}: Todos los productos estan disponibles sin costo a traves del Copernicus Data Space Ecosystem.
+    \item \textbf{Acceso gratuito y abierto}: Todos los productos están disponibles sin costo a través del Copernicus Data Space Ecosystem.
 \end{itemize}
 
 \subsubsection{Bandas Espectrales Utilizadas}
@@ -300,11 +300,11 @@ Para este estudio se utilizaron selectivamente cinco bandas del sensor MSI (Mult
 
 \begin{table}[H]
     \centering
-    \caption{Bandas Sentinel-2 utilizadas y su rol en el calculo de indices}
+    \caption{Bandas Sentinel-2 utilizadas y su rol en el cálculo de índices}
     \label{tab:bandas}
     \begin{tabular}{lllll}
         \toprule
-        \textbf{Banda} & \textbf{Nombre} & \textbf{Longitud de Onda} & \textbf{Resolucion} & \textbf{Indices donde participa} \\
+        \textbf{Banda} & \textbf{Nombre} & \textbf{Longitud de Onda} & \textbf{Resolución} & \textbf{Índices donde participa} \\
         \midrule
         B02 & Azul & 490 nm (492.4) & 10 m & BSI \\
         B03 & Verde & 560 nm (559.8) & 10 m & NDWI \\
@@ -325,119 +325,119 @@ Complementariamente a las imagenes satelitales, se incorporaron capas vectoriale
     \label{tab:vectoriales}
     \begin{tabular}{llll}
         \toprule
-        \textbf{Capa} & \textbf{Fuente} & \textbf{Formato} & \textbf{Proposito} \\
+        \textbf{Capa} & \textbf{Fuente} & \textbf{Formato} & \textbf{Propósito} \\
         \midrule
-        Limite comunal & IDE Chile / GADM & GeoJSON & Delimitacion del area de estudio \\
-        Red vial & OpenStreetMap & GeoJSON & Contextualizacion urbana \\
+        Límite comunal & IDE Chile / GADM & GeoJSON & Delimitación del área de estudio \\
+        Red vial & OpenStreetMap & GeoJSON & Contextualización urbana \\
         Edificaciones & OpenStreetMap & GeoJSON & Referencia de huella urbana \\
-        Zonas de analisis & Generadas internamente & GeoJSON & Unidades para estadisticas zonales \\
+        Zonas de análisis & Generadas internamente & GeoJSON & Unidades para estadísticas zonales \\
         \bottomrule
     \end{tabular}
 \end{table}
 
-\subsection{Calculo e Interpretacion de Indices Espectrales}
+\subsection{Cálculo e Interpretación de Índices Espectrales}
 
-Los indices espectrales constituyen transformaciones matematicas de las bandas originales que realzan fenomenos especificos de la superficie terrestre. A continuacion se describe cada indice utilizado, su fundamento fisico y criterios de interpretacion.
+Los índices espectrales constituyen transformaciones matemáticas de las bandas originales que realzan fenómenos específicos de la superficie terrestre. A continuación se describe cada índice utilizado, su fundamento físico y criterios de interpretación.
 
-\subsubsection{NDVI: Indice de Vegetacion de Diferencia Normalizada}
+\subsubsection{NDVI: Índice de Vegetación de Diferencia Normalizada}
 
-El NDVI (Normalized Difference Vegetation Index) es el indice espectral mas utilizado a nivel mundial para estimar la densidad y el estado de salud de la vegetacion. Su fundamento radica en el comportamiento espectral caracteristico de las plantas verdes: absorben fuertemente la radiacion roja (para la fotosintesis) mientras reflejan intensamente la radiacion infrarroja cercana (por la estructura celular de las hojas).
+El NDVI (Normalized Difference Vegetation Index) es el índice espectral más utilizado a nivel mundial para estimar la densidad y el estado de salud de la vegetación. Su fundamento radica en el comportamiento espectral característico de las plantas verdes: absorben fuertemente la radiación roja (para la fotosíntesis) mientras reflejan intensamente la radiación infrarroja cercana (por la estructura celular de las hojas).
 
 \begin{equation}
     NDVI = \frac{\rho_{NIR} - \rho_{Rojo}}{\rho_{NIR} + \rho_{Rojo}} = \frac{B08 - B04}{B08 + B04}
 \end{equation}
 
-El NDVI produce valores entre -1 y +1. En la practica, los valores tipicos para diferentes coberturas son:
+El NDVI produce valores entre -1 y +1. En la práctica, los valores típicos para diferentes coberturas son:
 
 \begin{itemize}
     \item \textbf{Valores negativos} ($NDVI < 0$): Agua, nubes, nieve. El agua absorbe fuertemente el infrarrojo, produciendo valores negativos.
     
     \item \textbf{Valores bajos} ($0 < NDVI < 0.2$): Suelo desnudo, rocas, superficies urbanas. Materiales inertes con similar reflectancia en rojo y NIR.
     
-    \item \textbf{Valores moderados} ($0.2 < NDVI < 0.5$): Vegetacion dispersa, pastizales, cultivos en etapas iniciales o vegetacion estresada.
+    \item \textbf{Valores moderados} ($0.2 < NDVI < 0.5$): Vegetación dispersa, pastizales, cultivos en etapas iniciales o vegetación estresada.
     
-    \item \textbf{Valores altos} ($NDVI > 0.5$): Vegetacion densa y saludable, bosques, cultivos en pleno desarrollo.
+    \item \textbf{Valores altos} ($NDVI > 0.5$): Vegetación densa y saludable, bosques, cultivos en pleno desarrollo.
 \end{itemize}
 
-\subsubsection{NDBI: Indice de Edificacion de Diferencia Normalizada}
+\subsubsection{NDBI: Índice de Edificación de Diferencia Normalizada}
 
-El NDBI (Normalized Difference Built-up Index) fue diseñado para discriminar areas urbanas y superficies construidas. Su logica se basa en que materiales como el concreto, asfalto y techos metalicos presentan mayor reflectancia en el infrarrojo de onda corta (SWIR) que en el infrarrojo cercano (NIR), un comportamiento opuesto al de la vegetacion.
+El NDBI (Normalized Difference Built-up Index) fue diseñado para discriminar áreas urbanas y superficies construidas. Su lógica se basa en que materiales como el concreto, asfalto y techos metálicos presentan mayor reflectancia en el infrarrojo de onda corta (SWIR) que en el infrarrojo cercano (NIR), un comportamiento opuesto al de la vegetación.
 
 \begin{equation}
     NDBI = \frac{\rho_{SWIR} - \rho_{NIR}}{\rho_{SWIR} + \rho_{NIR}} = \frac{B11 - B08}{B11 + B08}
 \end{equation}
 
-La interpretacion del NDBI es la siguiente:
+La interpretación del NDBI es la siguiente:
 \begin{itemize}
-    \item \textbf{Valores negativos}: Vegetacion, agua. Coberturas donde el NIR domina sobre el SWIR.
+    \item \textbf{Valores negativos}: Vegetación, agua. Coberturas donde el NIR domina sobre el SWIR.
     \item \textbf{Valores cercanos a cero}: Mezcla de coberturas o suelo desnudo.
-    \item \textbf{Valores positivos}: Areas urbanas, caminos pavimentados, techos. Superficies impermeables tipicas de entornos construidos.
+    \item \textbf{Valores positivos}: Áreas urbanas, caminos pavimentados, techos. Superficies impermeables típicas de entornos construidos.
 \end{itemize}
 
-\subsubsection{NDWI: Indice de Agua de Diferencia Normalizada}
+\subsubsection{NDWI: Índice de Agua de Diferencia Normalizada}
 
-El NDWI (Normalized Difference Water Index) facilita la identificacion de cuerpos de agua y areas con alto contenido de humedad. Explota el fuerte contraste entre la alta reflectancia del agua en el verde y su casi total absorcion en el infrarrojo cercano.
+El NDWI (Normalized Difference Water Index) facilita la identificación de cuerpos de agua y áreas con alto contenido de humedad. Explota el fuerte contraste entre la alta reflectancia del agua en el verde y su casi total absorción en el infrarrojo cercano.
 
 \begin{equation}
     NDWI = \frac{\rho_{Verde} - \rho_{NIR}}{\rho_{Verde} + \rho_{NIR}} = \frac{B03 - B08}{B03 + B08}
 \end{equation}
 
-En la practica:
+En la práctica:
 \begin{itemize}
     \item \textbf{Valores altos} ($NDWI > 0.3$): Cuerpos de agua abiertos y profundos.
-    \item \textbf{Valores moderados} ($0.1 < NDWI < 0.3$): Humedales, suelos saturados, vegetacion acuatica.
+    \item \textbf{Valores moderados} ($0.1 < NDWI < 0.3$): Humedales, suelos saturados, vegetación acuática.
     \item \textbf{Valores bajos o negativos}: Superficies terrestres secas.
 \end{itemize}
 
-\subsubsection{BSI: Indice de Suelo Desnudo}
+\subsubsection{BSI: Índice de Suelo Desnudo}
 
-El BSI (Bare Soil Index) permite destacar areas de suelo desnudo, tierras agricolas sin cultivo, o superficies degradadas. Combina cuatro bandas para maximizar el contraste entre suelo expuesto y otras coberturas.
+El BSI (Bare Soil Index) permite destacar áreas de suelo desnudo, tierras agrícolas sin cultivo, o superficies degradadas. Combina cuatro bandas para maximizar el contraste entre suelo expuesto y otras coberturas.
 
 \begin{equation}
     BSI = \frac{(\rho_{SWIR} + \rho_{Rojo}) - (\rho_{NIR} + \rho_{Azul})}{(\rho_{SWIR} + \rho_{Rojo}) + (\rho_{NIR} + \rho_{Azul})}
 \end{equation}
 
-\subsection{Metodos de Deteccion de Cambios}
+\subsection{Métodos de Detección de Cambios}
 
-La deteccion de cambios en imagenes satelitales puede abordarse mediante multiples estrategias. En este trabajo se implementaron dos metodos complementarios que representan distintos enfoques metodologicos.
+La detección de cambios en imágenes satelitales puede abordarse mediante múltiples estrategias. En este trabajo se implementaron dos métodos complementarios que representan distintos enfoques metodológicos.
 
-\subsubsection{Metodo 1: Diferencia de Indices (Analisis de Vectores de Cambio Simplificado)}
+\subsubsection{Método 1: Diferencia de Índices (Análisis de Vectores de Cambio Simplificado)}
 
-Este metodo, el mas intuitivo y ampliamente utilizado, consiste simplemente en calcular la diferencia aritmetica del NDVI entre la fecha final y la fecha inicial:
+Este método, el más intuitivo y ampliamente utilizado, consiste simplemente en calcular la diferencia aritmética del NDVI entre la fecha final y la fecha inicial:
 
 \begin{equation}
     \Delta NDVI = NDVI_{2024} - NDVI_{2020}
 \end{equation}
 
-La logica es directa: donde el NDVI disminuyo significativamente, hubo perdida de vegetacion; donde aumento, hubo ganancia. El desafio radica en definir que constituye un cambio ``significativo'', lo cual requiere establecer un umbral que separe el cambio real del ruido (variabilidad atmosferica, diferencias fenologicas residuales, errores de registro).
+La lógica es directa: donde el NDVI disminuyó significativamente, hubo pérdida de vegetación; donde aumentó, hubo ganancia. El desafío radica en definir qué constituye un cambio ``significativo'', lo cual requiere establecer un umbral que separe el cambio real del ruido (variabilidad atmosférica, diferencias fenológicas residuales, errores de registro).
 
-Tras revision de la literatura y experimentacion empirica, se establecio un umbral de $\pm 0.15$:
+Tras revisión de la literatura y experimentación empírica, se estableció un umbral de $\pm 0.15$:
 
 \begin{itemize}
-    \item $\Delta NDVI < -0.15$: \textbf{Perdida de vegetacion} (codigo -1)
-    \item $-0.15 \leq \Delta NDVI \leq 0.15$: \textbf{Sin cambio significativo} (codigo 0)
-    \item $\Delta NDVI > 0.15$: \textbf{Ganancia de vegetacion} (codigo +1)
+    \item $\Delta NDVI < -0.15$: \textbf{Pérdida de vegetación} (código -1)
+    \item $-0.15 \leq \Delta NDVI \leq 0.15$: \textbf{Sin cambio significativo} (código 0)
+    \item $\Delta NDVI > 0.15$: \textbf{Ganancia de vegetación} (código +1)
 \end{itemize}
 
-\subsubsection{Metodo 2: Clasificacion Multiindice Post-Clasificacion}
+\subsubsection{Método 2: Clasificación Multiíndice Post-Clasificación}
 
-El segundo metodo busca superar la principal limitacion del anterior: su incapacidad para distinguir el \textit{tipo} de cambio. Una reduccion del NDVI puede deberse a urbanizacion, pero tambien a incendios, sequia, enfermedades forestales o simplemente variabilidad natural.
+El segundo método busca superar la principal limitación del anterior: su incapacidad para distinguir el \textit{tipo} de cambio. Una reducción del NDVI puede deberse a urbanización, pero también a incendios, sequía, enfermedades forestales o simplemente variabilidad natural.
 
-Este metodo combina informacion del NDVI, NDBI y NDWI para inferir las transiciones mas probables entre clases de cobertura:
+Este método combina información del NDVI, NDBI y NDWI para inferir las transiciones más probables entre clases de cobertura:
 
 \begin{table}[H]
     \centering
-    \caption{Reglas de decision para la clasificacion multiindice}
+    \caption{Reglas de decisión para la clasificación multiíndice}
     \label{tab:reglas}
     \begin{tabular}{lp{9cm}}
         \toprule
-        \textbf{Clase de Cambio} & \textbf{Logica de Decision} \\
+        \textbf{Clase de Cambio} & \textbf{Lógica de Decisión} \\
         \midrule
-        Urbanizacion & El pixel era vegetacion en 2020 ($NDVI_{2020} > 0.3$), ahora muestra caracter urbano ($NDBI_{2024} > 0$), y perdio NDVI ($\Delta NDVI < -0.15$) \\
-        Perdida de Vegetacion & Perdio NDVI ($\Delta NDVI < -0.15$) pero no cumple criterios de urbanizacion \\
-        Ganancia de Vegetacion & Gano NDVI ($\Delta NDVI > 0.15$) \\
+        Urbanización & El píxel era vegetación en 2020 ($NDVI_{2020} > 0.3$), ahora muestra carácter urbano ($NDBI_{2024} > 0$), y perdió NDVI ($\Delta NDVI < -0.15$) \\
+        Pérdida de Vegetación & Perdió NDVI ($\Delta NDVI < -0.15$) pero no cumple criterios de urbanización \\
+        Ganancia de Vegetación & Ganó NDVI ($\Delta NDVI > 0.15$) \\
         Nuevo Cuerpo de Agua & No era agua ($NDWI_{2020} < 0.1$) y ahora es agua ($NDWI_{2024} > 0.1$) \\
-        Perdida de Agua & Era agua ($NDWI_{2020} > 0.1$) y ya no es agua ($NDWI_{2024} < 0.1$) \\
+        Pérdida de Agua & Era agua ($NDWI_{2020} > 0.1$) y ya no es agua ($NDWI_{2024} < 0.1$) \\
         Sin Cambio & No cumple ninguno de los criterios anteriores \\
         \bottomrule
     \end{tabular}
@@ -445,36 +445,36 @@ Este metodo combina informacion del NDVI, NDBI y NDWI para inferir las transicio
 
 \subsection{Fundamento de los Umbrales Seleccionados}
 
-La seleccion de umbrales es un aspecto critico en cualquier analisis de deteccion de cambios. Umbrales muy restrictivos produciran omisiones (cambios reales no detectados); umbrales muy laxos generaran falsas alarmas. Los valores utilizados en este trabajo se fundamentan tanto en la literatura cientifica como en la inspeccion visual de los datos:
+La selección de umbrales es un aspecto crítico en cualquier análisis de detección de cambios. Umbrales muy restrictivos producirán omisiones (cambios reales no detectados); umbrales muy laxos generarán falsas alarmas. Los valores utilizados en este trabajo se fundamentan tanto en la literatura científica como en la inspección visual de los datos:
 
 \begin{table}[H]
     \centering
-    \caption{Justificacion de los umbrales empleados}
+    \caption{Justificación de los umbrales empleados}
     \label{tab:umbrales}
     \begin{tabular}{llp{6cm}}
         \toprule
-        \textbf{Parametro} & \textbf{Valor} & \textbf{Fundamento} \\
+        \textbf{Parámetro} & \textbf{Valor} & \textbf{Fundamento} \\
         \midrule
-        NDVI vegetacion & 0.3 & Valor clasico propuesto por Rouse et al. (1974). Separa vegetacion activa de otras coberturas. \\
-        NDBI urbano & 0.0 & Limite teorico: valores positivos indican predominio de SWIR sobre NIR. \\
-        Cambio minimo & 0.15 & Cambios menores podrían atribuirse a variabilidad atmosferica residual o diferencias en angulo de iluminacion. \\
-        NDWI agua & 0.1 & Umbral conservador para minimizar confusion con sombras. \\
+        NDVI vegetación & 0.3 & Valor clásico propuesto por Rouse et al. (1974). Separa vegetación activa de otras coberturas. \\
+        NDBI urbano & 0.0 & Límite teórico: valores positivos indican predominio de SWIR sobre NIR. \\
+        Cambio mínimo & 0.15 & Cambios menores podrían atribuirse a variabilidad atmosférica residual o diferencias en ángulo de iluminación. \\
+        NDWI agua & 0.1 & Umbral conservador para minimizar confusión con sombras. \\
         \bottomrule
     \end{tabular}
 \end{table}
 
-\subsection{Analisis Zonal y Cuantificacion de Cambios}
+\subsection{Análisis Zonal y Cuantificación de Cambios}
 
-Los resultados raster de deteccion de cambios, expresados en pixeles, deben traducirse a metricas comprensibles para la toma de decisiones. Para ello se implemento un analisis zonal que:
+Los resultados raster de detección de cambios, expresados en píxeles, deben traducirse a métricas comprensibles para la toma de decisiones. Para ello se implementó un análisis zonal que:
 
 \begin{enumerate}
-    \item Divide el area de estudio en zonas geograficas (grilla regular o unidades administrativas).
-    \item Cuenta el numero de pixeles de cada clase de cambio dentro de cada zona.
-    \item Convierte los conteos a superficie en hectareas, considerando que cada pixel de 10x10 m cubre 0.01 ha.
-    \item Calcula porcentajes respecto al area total de cada zona.
+    \item Divide el área de estudio en zonas geográficas (grilla regular o unidades administrativas).
+    \item Cuenta el número de píxeles de cada clase de cambio dentro de cada zona.
+    \item Convierte los conteos a superficie en hectáreas, considerando que cada píxel de 10x10 m cubre 0.01 ha.
+    \item Calcula porcentajes respecto al área total de cada zona.
 \end{enumerate}
 
-Este analisis se implemento mediante la biblioteca \texttt{rasterstats} de Python, que permite calcular estadisticas zonales de manera eficiente sobre rasters de gran tamaño.
+Este análisis se implementó mediante la biblioteca \texttt{rasterstats} de Python, que permite calcular estadísticas zonales de manera eficiente sobre rasters de gran tamaño.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 4. RESULTADOS
@@ -483,76 +483,76 @@ Este analisis se implemento mediante la biblioteca \texttt{rasterstats} de Pytho
 
 \subsection{Panorama General de los Cambios Detectados}
 
-El analisis de los cambios ocurridos en la comuna de Chaiten entre 2020 y 2024 revela una dinamica territorial caracterizada por dos tendencias principales: una continua expansion del area urbana asociada al proceso de reconstruccion, y una reduccion paralela de la cobertura vegetal en las areas circundantes a la ciudad.
+El análisis de los cambios ocurridos en la comuna de Chaitén entre 2020 y 2024 revela una dinámica territorial caracterizada por dos tendencias principales: una continua expansión del área urbana asociada al proceso de reconstrucción, y una reducción paralela de la cobertura vegetal en las áreas circundantes a la ciudad.
 
-Estos patrones, consistentes con las expectativas derivadas del contexto historico post-erupcion, se cuantifican a continuacion mediante los resultados de ambos metodos de deteccion.
+Estos patrones, consistentes con las expectativas derivadas del contexto histórico post-erupción, se cuantifican a continuación mediante los resultados de ambos métodos de detección.
 
-\subsection{Resultados del Metodo 1: Diferencia de NDVI}
+\subsection{Resultados del Método 1: Diferencia de NDVI}
 
-La aplicacion del metodo de diferencia de indices sobre el periodo 2020-2024 arrojo los siguientes resultados:
+La aplicación del método de diferencia de índices sobre el periodo 2020-2024 arrojó los siguientes resultados:
 
 \begin{table}[H]
     \centering
-    \caption{Distribucion de cambios segun Metodo 1 (Diferencia de NDVI)}
+    \caption{Distribución de cambios según Método 1 (Diferencia de NDVI)}
     \label{tab:resultados_m1}
     \begin{tabular}{lrrr}
         \toprule
-        \textbf{Categoria} & \textbf{Pixeles} & \textbf{Porcentaje} & \textbf{Superficie (ha)} \\
+        \textbf{Categoría} & \textbf{Píxeles} & \textbf{Porcentaje} & \textbf{Superficie (ha)} \\
         \midrule
-        Perdida de vegetacion & 10,785 & 26.96\% & 107.85 \\
+        Pérdida de vegetación & 10,785 & 26.96\% & 107.85 \\
         Sin cambio significativo & 28,379 & 70.95\% & 283.79 \\
-        Ganancia de vegetacion & 836 & 2.09\% & 8.36 \\
+        Ganancia de vegetación & 836 & 2.09\% & 8.36 \\
         \midrule
         \textbf{Total} & 40,000 & 100.00\% & 400.00 \\
         \bottomrule
     \end{tabular}
 \end{table}
 
-El resultado mas llamativo es que \textbf{mas de una cuarta parte del area de estudio} (26.96\%) experimento una reduccion significativa del NDVI durante el quinquenio analizado. Esto equivale a casi 108 hectareas de perdida de vigor vegetal.
+El resultado más llamativo es que \textbf{más de una cuarta parte del área de estudio} (26.96\%) experimentó una reducción significativa del NDVI durante el quinquenio analizado. Esto equivale a casi 108 hectáreas de pérdida de vigor vegetal.
 
-Por otra parte, la ganancia de vegetacion fue marginal, representando apenas el 2.09\% del area (8.36 ha). Esto sugiere que el proceso de regeneracion natural de la vegetacion en las areas afectadas por la erupcion de 2008 aun es lento y limitado.
+Por otra parte, la ganancia de vegetación fue marginal, representando apenas el 2.09\% del área (8.36 ha). Esto sugiere que el proceso de regeneración natural de la vegetación en las áreas afectadas por la erupción de 2008 aún es lento y limitado.
 
-La diferencia media del NDVI para toda el area fue de \textbf{-0.0802}, confirmando la tendencia general hacia la reduccion de la vegetacion.
+La diferencia media del NDVI para toda el área fue de \textbf{-0.0802}, confirmando la tendencia general hacia la reducción de la vegetación.
 
-\subsection{Resultados del Metodo 2: Clasificacion Multiindice}
+\subsection{Resultados del Método 2: Clasificación Multiíndice}
 
-El metodo de clasificacion multiindice permitio desagregar la perdida de vegetacion segun su causa mas probable:
+El método de clasificación multiíndice permitió desagregar la pérdida de vegetación según su causa más probable:
 
 \begin{table}[H]
     \centering
-    \caption{Distribucion de cambios segun Metodo 2 (Clasificacion Multiindice)}
+    \caption{Distribución de cambios según Método 2 (Clasificación Multiíndice)}
     \label{tab:resultados_m2}
     \begin{tabular}{lrrr}
         \toprule
-        \textbf{Clase de Cambio} & \textbf{Pixeles} & \textbf{Porcentaje} & \textbf{Superficie (ha)} \\
+        \textbf{Clase de Cambio} & \textbf{Píxeles} & \textbf{Porcentaje} & \textbf{Superficie (ha)} \\
         \midrule
         Sin Cambio & 28,379 & 70.95\% & 283.79 \\
-        Urbanizacion & 1,734 & 4.33\% & 17.34 \\
-        Perdida de Vegetacion (otras causas) & 9,051 & 22.63\% & 90.51 \\
-        Ganancia de Vegetacion & 836 & 2.09\% & 8.36 \\
+        Urbanización & 1,734 & 4.33\% & 17.34 \\
+        Pérdida de Vegetación (otras causas) & 9,051 & 22.63\% & 90.51 \\
+        Ganancia de Vegetación & 836 & 2.09\% & 8.36 \\
         Nuevos Cuerpos de Agua & 0 & 0.00\% & 0.00 \\
-        Perdida de Cuerpos de Agua & 0 & 0.00\% & 0.00 \\
+        Pérdida de Cuerpos de Agua & 0 & 0.00\% & 0.00 \\
         \midrule
         \textbf{Total} & 40,000 & 100.00\% & 400.00 \\
         \bottomrule
     \end{tabular}
 \end{table}
 
-Este metodo revela un hallazgo fundamental: de las 107.85 hectareas que perdieron vegetacion segun el Metodo 1, \textbf{17.34 hectareas (16\%) corresponden especificamente a procesos de urbanizacion}, es decir, a la conversion de areas previamente vegetadas en superficies construidas o impermeabilizadas.
+Este método revela un hallazgo fundamental: de las 107.85 hectáreas que perdieron vegetación según el Método 1, \textbf{17.34 hectáreas (16\%) corresponden específicamente a procesos de urbanización}, es decir, a la conversión de áreas previamente vegetadas en superficies construidas o impermeabilizadas.
 
-Las restantes 90.51 hectareas de perdida vegetal (22.63\% del area) responden a otras causas no directamente asociadas a la expansion urbana, posiblemente incluyendo degradacion natural, efectos climaticos, o dinamicas propias de la sucesion ecológica post-erupcion.
+Las restantes 90.51 hectáreas de pérdida vegetal (22.63\% del área) responden a otras causas no directamente asociadas a la expansión urbana, posiblemente incluyendo degradación natural, efectos climáticos, o dinámicas propias de la sucesión ecológica post-erupción.
 
-\subsection{Analisis de la Evolucion Temporal}
+\subsection{Análisis de la Evolución Temporal}
 
-Para comprender la dinamica temporal de los cambios, se analizo la evolucion anual de los principales indicadores:
+Para comprender la dinámica temporal de los cambios, se analizó la evolución anual de los principales indicadores:
 
 \begin{table}[H]
     \centering
-    \caption{Evolucion temporal de indicadores espectrales y de cobertura (2020-2024)}
+    \caption{Evolución temporal de indicadores espectrales y de cobertura (2020-2024)}
     \label{tab:evolucion}
     \begin{tabular}{lrrrr}
         \toprule
-        \textbf{Anio} & \textbf{NDVI medio} & \textbf{NDBI medio} & \textbf{Cobertura Vegetal} & \textbf{Area Urbana} \\
+        \textbf{Año} & \textbf{NDVI medio} & \textbf{NDBI medio} & \textbf{Cobertura Vegetal} & \textbf{Área Urbana} \\
         \midrule
         2020 & 0.42 & -0.10 & 65.0\% & 15.0\% \\
         2021 & 0.40 & -0.08 & 62.0\% & 17.0\% \\
@@ -563,51 +563,51 @@ Para comprender la dinamica temporal de los cambios, se analizo la evolucion anu
     \end{tabular}
 \end{table}
 
-Las tendencias son claras y consistentes anio tras anio:
+Las tendencias son claras y consistentes año tras año:
 
 \begin{itemize}
-    \item El \textbf{NDVI medio disminuyo de 0.42 a 0.35}, una reduccion del 16.7\% en solo cinco anios. Esta caída refleja tanto la perdida directa de vegetacion como la posible degradacion del vigor de la vegetacion remanente.
+    \item El \textbf{NDVI medio disminuyó de 0.42 a 0.35}, una reducción del 16.7\% en solo cinco años. Esta caída refleja tanto la pérdida directa de vegetación como la posible degradación del vigor de la vegetación remanente.
     
-    \item El \textbf{NDBI medio aumento de -0.10 a -0.02}, acercandose progresivamente al umbral de caracter urbano. Aunque aun prevalece el caracter vegetal (NDBI negativo), la tendencia apunta hacia una mayor presencia de superficies impermeables.
+    \item El \textbf{NDBI medio aumentó de -0.10 a -0.02}, acercándose progresivamente al umbral de carácter urbano. Aunque aún prevalece el carácter vegetal (NDBI negativo), la tendencia apunta hacia una mayor presencia de superficies impermeables.
     
-    \item La \textbf{cobertura vegetal estimada cayo de 65\% a 52\%}, una reduccion de 13 puntos porcentuales.
+    \item La \textbf{cobertura vegetal estimada cayó de 65\% a 52\%}, una reducción de 13 puntos porcentuales.
     
-    \item El \textbf{area urbana estimada crecio de 15\% a 25\%}, un incremento de 10 puntos porcentuales, duplicando casi la proporcion inicial.
+    \item El \textbf{área urbana estimada creció de 15\% a 25\%}, un incremento de 10 puntos porcentuales, duplicando casi la proporción inicial.
 \end{itemize}
 
-\subsection{Comparacion y Complementariedad de los Metodos}
+\subsection{Comparación y Complementariedad de los Métodos}
 
-La aplicacion paralela de dos metodos de deteccion permitio evaluar sus respectivas fortalezas y debilidades:
+La aplicación paralela de dos métodos de detección permitió evaluar sus respectivas fortalezas y debilidades:
 
 \begin{table}[H]
     \centering
-    \caption{Comparacion de los metodos de deteccion de cambios implementados}
+    \caption{Comparación de los métodos de detección de cambios implementados}
     \label{tab:comparacion}
     \begin{tabular}{lll}
         \toprule
-        \textbf{Criterio} & \textbf{Metodo 1} & \textbf{Metodo 2} \\
+        \textbf{Criterio} & \textbf{Método 1} & \textbf{Método 2} \\
         \midrule
         Complejidad conceptual & Baja & Media \\
-        Numero de parametros & 1 & 4 \\
+        Número de parámetros & 1 & 4 \\
         Clases de cambio detectadas & 3 & 6 \\
-        Capacidad de tipificacion & Limitada (solo vegetacion) & Alta (multiples transiciones) \\
+        Capacidad de tipificación & Limitada (solo vegetación) & Alta (múltiples transiciones) \\
         Velocidad de procesamiento & Muy alta & Alta \\
-        Facilidad de interpretacion & Muy alta & Media \\
+        Facilidad de interpretación & Muy alta & Media \\
         Sensibilidad a errores de umbral & Media & Alta \\
         \bottomrule
     \end{tabular}
 \end{table}
 
-La principal conclusion es que \textbf{ambos metodos son complementarios}: el Metodo 1 ofrece una vision rapida y robusta del cambio total de vegetacion, mientras que el Metodo 2 permite desagregar ese cambio segun su naturaleza especifica (urbanizacion vs. otras causas). En aplicaciones operacionales, se recomienda utilizar ambos y contrastar sus resultados.
+La principal conclusión es que \textbf{ambos métodos son complementarios}: el Método 1 ofrece una visión rápida y robusta del cambio total de vegetación, mientras que el Método 2 permite desagregar ese cambio según su naturaleza específica (urbanización vs. otras causas). En aplicaciones operacionales, se recomienda utilizar ambos y contrastar sus resultados.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 5. DISCUSION
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Discusion e Interpretacion}
+\section{Discusión e Interpretación}
 
-\subsection{Interpretacion de los Patrones Espaciales y Temporales}
+\subsection{Interpretación de los Patrones Espaciales y Temporales}
 
-Los resultados obtenidos revelan un territorio en activa transformacion, donde el proceso de reconstruccion urbana post-erupcion continua siendo el principal motor de cambio. La pérdida de vegetación y la expansión del área urbana son fenómenos correlacionados que responden a una dinámica común: la progresiva recuperación de Chaitén como centro urbano funcional tras el desastre de 2008.
+Los resultados obtenidos revelan un territorio en activa transformación, donde el proceso de reconstrucción urbana post-erupción continúa siendo el principal motor de cambio. La pérdida de vegetación y la expansión del área urbana son fenómenos correlacionados que responden a una dinámica común: la progresiva recuperación de Chaitén como centro urbano funcional tras el desastre de 2008.
 
 Es notable que, quince años después de la erupción, el proceso de reconstrucción siga generando cambios detectables en las imágenes satelitales. Esto evidencia tanto la magnitud del desastre original como la resiliencia de la comunidad que, contra todo pronóstico inicial, decidió reconstruir su ciudad en el mismo emplazamiento.
 
@@ -653,7 +653,7 @@ A partir del trabajo realizado, se derivan las siguientes conclusiones principal
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 7. REFERENCIAS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Referencias Bibliograficas}
+\section{Referencias Bibliográficas}
 
 \begin{enumerate}
     \item Rouse, J.W., Haas, R.H., Schell, J.A., \& Deering, D.W. (1974). Monitoring vegetation systems in the Great Plains with ERTS. \textit{NASA Special Publication}, 351, 309-317.
@@ -676,9 +676,9 @@ A partir del trabajo realizado, se derivan las siguientes conclusiones principal
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \appendix
-\section{Estructura del Repositorio de Codigo}
+\section{Estructura del Repositorio de Código}
 
-El codigo fuente completo del proyecto se encuentra organizado de la siguiente manera:
+El código fuente completo del proyecto se encuentra organizado de la siguiente manera:
 
 \begin{lstlisting}[language=bash]
 Lab2GeoInformatica/
