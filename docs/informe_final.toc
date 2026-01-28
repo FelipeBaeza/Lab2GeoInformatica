@@ -1,0 +1,42 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {section}{\numberline {1}Introduccion}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Contexto y Problematica}{2}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Relevancia del Estudio}{2}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Objetivo General}{2}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Objetivos Especificos}{2}{subsection.1.4}%
+\contentsline {section}{\numberline {2}Descripcion del Area y Periodo de Estudio}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Localizacion Geografica y Caracteristicas del Territorio}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}La Erupcion de 2008: Un Evento que Cambio la Historia de Chaiten}{3}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Cronologia del Desastre}{4}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Situacion Actual y Proceso de Reconstruccion}{4}{subsubsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.3}Justificacion de la Seleccion del Area de Estudio}{4}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Caracterizacion del Periodo de Analisis}{5}{subsection.2.4}%
+\contentsline {section}{\numberline {3}Metodologia Aplicada}{5}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Vision General del Flujo de Trabajo}{5}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Adquisicion y Fuentes de Datos}{6}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Descripcion del Satelite Sentinel-2}{6}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}Bandas Espectrales Utilizadas}{6}{subsubsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.3}Datos Vectoriales de Apoyo}{6}{subsubsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.3}Calculo e Interpretacion de Indices Espectrales}{7}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}NDVI: Indice de Vegetacion de Diferencia Normalizada}{7}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}NDBI: Indice de Edificacion de Diferencia Normalizada}{7}{subsubsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.3}NDWI: Indice de Agua de Diferencia Normalizada}{8}{subsubsection.3.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.4}BSI: Indice de Suelo Desnudo}{8}{subsubsection.3.3.4}%
+\contentsline {subsection}{\numberline {3.4}Metodos de Deteccion de Cambios}{8}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}Metodo 1: Diferencia de Indices (Analisis de Vectores de Cambio Simplificado)}{8}{subsubsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.2}Metodo 2: Clasificacion Multiindice Post-Clasificacion}{9}{subsubsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.5}Fundamento de los Umbrales Seleccionados}{9}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Analisis Zonal y Cuantificacion de Cambios}{9}{subsection.3.6}%
+\contentsline {section}{\numberline {4}Resultados y Hallazgos}{10}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Panorama General de los Cambios Detectados}{10}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Resultados del Metodo 1: Diferencia de NDVI}{10}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Resultados del Metodo 2: Clasificacion Multiindice}{10}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Analisis de la Evolucion Temporal}{11}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Comparacion y Complementariedad de los Metodos}{12}{subsection.4.5}%
+\contentsline {section}{\numberline {5}Discusion e Interpretacion}{12}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Interpretacion de los Patrones Espaciales y Temporales}{12}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Limitaciones del Estudio y Consideraciones Metodológicas}{12}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Validez y Aplicabilidad de los Resultados}{13}{subsection.5.3}%
+\contentsline {section}{\numberline {6}Conclusiones}{13}{section.6}%
+\contentsline {section}{\numberline {7}Referencias Bibliograficas}{13}{section.7}%
+\contentsline {section}{\numberline {A}Estructura del Repositorio de Codigo}{15}{appendix.Alph1}%

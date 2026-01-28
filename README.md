@@ -87,6 +87,45 @@ Debes ejecutar los scripts en el siguiente orden:
 -   **Umbrales**: NDVI vegetación=0.3, NDBI urbano=0.0, cambio mínimo=0.15.
 -   **Validación**: Visual a través del dashboard comparando mapas de cambio.
 
+## Notebooks
+
+El directorio `notebooks/` contiene documentación interactiva del flujo de trabajo:
+
+1. `01_descarga_datos.ipynb` - Adquisición de imágenes
+2. `02_calculo_indices.ipynb` - Cálculo de índices espectrales
+3. `03_deteccion_cambios.ipynb` - Métodos de detección
+4. `04_analisis_zonal.ipynb` - Estadísticas por zona
+5. `05_visualizacion.ipynb` - Dashboard y visualización
+
+## Animación Temporal (GIF)
+
+Para generar una animación GIF de la evolución temporal:
+
+```bash
+python scripts/create_animation.py
+```
+
+Esto genera `outputs/animacion_ndvi.gif` y `outputs/animacion_ndbi.gif`.
+
+## Deploy en la Nube (Streamlit Cloud)
+
+Para desplegar el dashboard en Streamlit Cloud:
+
+1. Subir el repositorio a GitHub
+2. Ir a [share.streamlit.io](https://share.streamlit.io/)
+3. Conectar con GitHub y seleccionar este repositorio
+4. Configurar:
+   - **Main file path**: `app/app.py`
+   - **Python version**: 3.10
+
+El archivo `.streamlit/config.toml` ya está configurado para el deploy.
+
+## Documentación
+
+- `docs/informe_final.md` - Informe final del proyecto
+- `data/processed/comparacion_metodos.md` - Comparación de métodos de detección
+
 ## Autores
 Catalina López
 Felipe Baeza
+
