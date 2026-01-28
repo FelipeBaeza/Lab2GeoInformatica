@@ -12,13 +12,14 @@ Este proyecto implementa un flujo de trabajo para detectar, cuantificar y visual
 │   │   ├── cambio_clasificado.tif      # Método 2: Clasificación Multiíndice
 │   │   ├── cambio_diferencia_ndvi.tif  # Método 1: Diferencia de Índices
 │   │   ├── comparacion_metodos.md      # Documentación de métodos
-│   │   └── estadisticas_cambio.csv     # Estadísticas por zona
+│   │   ├── estadisticas_cambio.csv     # Estadísticas por zona
+│   │   └── evolucion_temporal.csv      # Series temporales de índices
 │   └── vector/         # GeoJSON de zonas de análisis
 ├── scripts/
 │   ├── download_sentinel_series.py # Descarga de Copernicus
 │   ├── calculate_indices.py        # Cálculo de NDVI, NDBI, NDWI, BSI
 │   ├── detect_changes.py           # Detección de cambios (2 métodos)
-│   └── zonal_analysis.py           # Estadísticas por zona
+│   └── zonal_analysis.py           # Estadísticas zonales y temporales
 ├── app/
 │   └── app.py                      # Dashboard Streamlit interactivo
 ├── outputs/
@@ -64,11 +65,12 @@ Debes ejecutar los scripts en el siguiente orden:
     python scripts/detect_changes.py
     ```
 
-4.  **Análisis Zonal**:
-    Calcula estadísticas de cambio por zona (a falta de shapefile real, genera uno de prueba).
+4.  **Análisis Zonal y Temporal**:
+    Calcula estadísticas de cambio por zona y genera series de tiempo de la evolución de índices.
     ```bash
     python scripts/zonal_analysis.py
     ```
+    Esto genera `estadisticas_cambio.csv` y `evolucion_temporal.csv`.
 
 5.  **Visualización (Dashboard)**:
     Inicia la aplicación web para explorar los resultados.
@@ -123,6 +125,7 @@ El archivo `.streamlit/config.toml` ya está configurado para el deploy.
 ## Documentación
 
 - `docs/informe_final.md` - Informe final del proyecto
+- `outputs/interpretacion_resultados.md` - Interpretación detallada de resultados
 - `data/processed/comparacion_metodos.md` - Comparación de métodos de detección
 
 ## Autores
